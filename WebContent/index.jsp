@@ -12,6 +12,7 @@
 </head>
 <body>
 <%@ include file="/include/header.jsp" %>
+adsfadsfdasfadsfdsafdas
 <%@ include file="/include/footer.jsp" %>
 </body>
 </html>
