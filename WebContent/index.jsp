@@ -13,8 +13,7 @@
 <body>
 <%@ include file="/include/header.jsp" %>
 adsfadsfdasfadsfdsafdas
-hrfthtrh
-ikjkkkkkkkkkkkkkkkkkkkkkkkkkkk
+hrfthtrhfdgbdkkkkkkkkk
 <%@ include file="/include/footer.jsp" %>
 </body>
 </html>
