@@ -2,6 +2,26 @@
 [클론 목표](https://brand.naver.com/linefriends)
 > 도저어어어어어언!
 > 
+
+### 개발 기간 📆
+* 2021년 4월 14일 ~
+
+### 개발 인원🙎‍♂️
+* 3명
+
+### 기술 스택🌈
+* JAVA
+* JSP
+* Servlet
+* BootStrap
+* JS
+* Ajax
+* CSS
+* MySQL
+
+### 협업 툴 🔨
+* Github
+
 ✔️ 아이디, 이름(필수)  
 ✔️ 비밀번호(필수)  
 ✔️ 비밀번호 재확인(필수)  
