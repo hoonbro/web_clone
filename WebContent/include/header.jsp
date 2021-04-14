@@ -4,7 +4,6 @@
 .dropdown:hover .dropdown-menu {
 	display: block;
 }
-
 .dropdown .dropdown-menu {
 	display: none;
 	}
@@ -18,7 +17,6 @@
 .navbar-nav {
   display: inline-block;
 }
-
 .navbar-nav>li {
    display: inline-block;
 }
@@ -202,33 +200,3 @@
 		</div>
 	</nav>
 	<hr>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
