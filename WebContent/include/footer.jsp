@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <style>
-th, td {
+.footer-table th, .footer-table td {
 	text-align: left;
 	margin-left: 50px;
 	padding-left: 80px;
 }
 
-tr td:first-child, th:first-child {
+.footer-table td:first-child, .footer-table th:first-child {
 	padding-left: 0px;
 }
 
-td div, .row1 span {
+.footer-table td div, .row1 span {
 	display: inline-block;
 	border-left: 1px solid silver;
 	padding: 10px;
@@ -19,7 +19,7 @@ td div, .row1 span {
 	line-height: 2px;
 }
 
-td div:first-child, .row1 span:first-child {
+.footer-table td div:first-child, .row1 span:first-child {
 	border-left: none;
 	padding-left: 0px;
 }
@@ -58,7 +58,7 @@ td div:first-child, .row1 span:first-child {
 	<div style="height: 50px;"></div>
 
 	<div>
-		<table class="text-secondary">
+		<table class="text-secondary footer-table">
 			<tr class="text-dark">
 				<th>네이버(주)</th>
 				<th>고객센터</th>
