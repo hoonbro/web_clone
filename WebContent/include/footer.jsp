@@ -30,7 +30,7 @@
 	padding: 22px;
 }
 </style>
-<footer>
+<footer style="width:1400px">
 	<div id="text1" class="bg-light">
 		<img src="https://res.cloudinary.com/dk-find-out/image/upload/q_70,c_pad,w_1200,h_630,f_auto/exclamation_mark_icon_qxxyxc.jpg"
 		width=40 height=20>
