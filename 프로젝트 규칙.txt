@@ -1,0 +1,17 @@
+1. 회원가입
+아이디 : userId
+비번 : userPwd
+생년월일
+ - 년 : userYear
+ - 월 : userMonth
+ - 일 : userDay
+성별 : userGender
+이메일 : userEmail
+휴대전화 : userPhone
+
+2.상품
+상품 이름 : pName
+상품 가격 : pPrice
+상품 사진 : pUrl
+상품 수량 : pTotal
+등록일 : pDate
