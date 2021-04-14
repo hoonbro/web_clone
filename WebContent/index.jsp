@@ -41,6 +41,13 @@
 			<span class="carousel-control-next-icon"></span>
 		</a>
 	</div>
-	<%@ include file="/include/footer.jsp"%>
+	
+	<div style="height:50px"></div>
+	<div class="row" style="margin:0px">
+		<div class="col-2"></div>
+		<div class="col-8"><%@ include file="/include/footer.jsp"%></div>
+		<div class="col-2"></div>
+	</div>
+	<div style="height:50px"></div>
 </body>
 </html>
