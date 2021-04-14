@@ -30,7 +30,8 @@
 	padding: 22px;
 }
 </style>
-<footer style="width:1400px">
+<div style="height:50px"></div>
+<footer style="width:1400px; margin:auto">
 	<div id="text1" class="bg-light">
 		<img src="https://res.cloudinary.com/dk-find-out/image/upload/q_70,c_pad,w_1200,h_630,f_auto/exclamation_mark_icon_qxxyxc.jpg"
 		width=40 height=20>
@@ -104,3 +105,4 @@
 			width=70 height=30></a> <span class="text-secondary">Copyright ©NAVER Corp.All Rights Reserved.</span>
 	</div>
 </footer>
+<div style="height:50px"></div>
