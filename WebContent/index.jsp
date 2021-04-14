@@ -56,6 +56,36 @@ p {
 </head>
 <body>
 	<%@ include file="/include/header.jsp"%>
+		
+		<div id="demo" class="carousel slide" data-ride="carousel">
+		<ul class="carousel-indicators" style="z-index: 1">
+			<li data-target="#demo" data-slide-to="0" class=""></li>
+			<li data-target="#demo" data-slide-to="1" class="active"></li>
+			<li data-target="#demo" data-slide-to="2" class=""></li>
+		</ul>
+		<div class="carousel-inner">
+			<div class="carousel-item">
+				<img src="https://www.visitcalifornia.com/sites/visitcalifornia.com/files/styles/welcome_image/public/LosAngeles_Hero_Killackey_1280x642_sized.jpg" alt="Los Angeles"
+					style="width: 100%; height: 100%;">
+			</div>
+			<div class="carousel-item active">
+				<img src="https://image.chosun.com/sitedata/image/202010/20/2020102000536_0.png" alt="Chicago"
+					style="width: 100%; height: 100%;">
+			</div>
+			<div class="carousel-item">
+				<img src="https://youimg1.tripcdn.com/target/100a10000000pfidn47CE_D_1180_558.jpg" alt="New York" style="width: 100%; height: 100%;">
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#demo" data-slide="prev"> <span
+			class="carousel-control-prev-icon"></span>
+		</a> <a class="carousel-control-next" href="#demo" data-slide="next">
+			<span class="carousel-control-next-icon"></span>
+		</a>
+	</div>
+		
+		
+	
+	
 	<div class="container">
 		<div class="d-flex justify-content-center">
 			<h3 class="font-weight-bold mt-5 mb-4">주목해야 할 소식</h3>
@@ -200,6 +230,12 @@ p {
 		</div>
 	</div>
 
-	<%@ include file="/include/footer.jsp"%>
+		<div style="height:50px"></div>
+	<div class="row" style="margin:0px">
+		<div class="col-2"></div>
+		<div class="col-8"><%@ include file="/include/footer.jsp"%></div>
+		<div class="col-2"></div>
+	</div>
+	<div style="height:50px"></div>
 </body>
 </html>
