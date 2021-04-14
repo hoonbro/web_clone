@@ -32,7 +32,18 @@
 		}, function() {
 			$(this).removeClass('open');
 		});
+		
 	});
+	function moreView() {
+		$('#moreList').css('display', "block"); 
+		$('#more').css('visibility', 'hidden');
+		
+	}
+	function closeView() {
+		$('#moreList').css('display', "none"); 
+		$('#more').css('visibility', 'visible');
+	}
+	
 </script>
 </head>
 <body>
@@ -157,7 +168,38 @@
 						</div>
 				</li>
 				<li class="nav-item dropdown mr-3">
-					<a class="nav-link dropdown-toggle" data-toggle="dropdown"  data-hover="dropdown" href="#">더보기</a>
+					<a class="nav-link dropdown-toggle" id = "more" data-toggle="dropdown" href="javascript:void(0);" onclick="javascript:moreView();">더보기</a>
+				</li>
+			</ul>
+				<ul class="navbar-nav float-left" data-animations="fadeIn" id = "moreList" style = "display:none">
+				<li class="nav-item dropdown mr-3">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown"  data-hover="dropdown" href="#">키즈</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#">의류</a> 
+						<a class="dropdown-item" href="#">패션잡화</a> 
+						<a class="dropdown-item" href="#">양말,슬리퍼</a>
+					</div>
+				</li>
+				<li class="nav-item active mr-3">
+			    	<a class="nav-link" href="#">전체상품</a>
+			    </li>
+			    <li class="nav-item active mr-3">
+			    	<a class="nav-link" href="#">묻고 답하기</a>
+			    </li>
+			    <li class="nav-item active mr-3">
+			    	<a class="nav-link" href="#">공지사항</a>
+			    </li>
+			    <li class="nav-item active mr-3">
+			    	<a class="nav-link" href="#">리뷰이벤트</a>
+			    </li>
+			    <li class="nav-item active mr-3">
+			    	<a class="nav-link" href="#">쇼핑스토리</a>
+			    </li>
+			   	<li class="nav-item active mr-3">
+			    	<a class="nav-link" href="#">판매자 정보</a>
+			    </li>
+				<li class="nav-item dropdown mr-3 float-right">
+					<a class="nav-link dropdown-toggle" id = "close" data-toggle="dropdown" href="javascript:void(0);" onclick="javascript:closeView();">닫기</a>
 				</li>
 			</ul>
 		</div>
