@@ -24,6 +24,13 @@
 	font-weight : bolder;
   	color: skyblue;
 }
+.navbar-nav {
+  display: inline-block;
+}
+
+.navbar-nav>li {
+   display: inline-block;
+}
 </style>
 <script>
 	$(function() {
@@ -35,7 +42,8 @@
 		
 	});
 	function moreView() {
-		$('#moreList').css('display', "block"); 
+		$('#moreList').css('display', "inline"); 
+		$('#moreList').addClass("navbar-nav") ;
 		$('#more').css('visibility', 'hidden');
 		
 	}
@@ -171,7 +179,7 @@
 					<a class="nav-link dropdown-toggle" id = "more" data-toggle="dropdown" href="javascript:void(0);" onclick="javascript:moreView();">더보기</a>
 				</li>
 			</ul>
-				<ul class="navbar-nav float-left" data-animations="fadeIn" id = "moreList" style = "display:none">
+			<ul class="navbar-nav" data-animations="fadeIn" id = "moreList" style = "display:none">
 				<li class="nav-item dropdown mr-3">
 					<a class="nav-link dropdown-toggle" data-toggle="dropdown"  data-hover="dropdown" href="#">키즈</a>
 					<div class="dropdown-menu">
@@ -198,7 +206,7 @@
 			   	<li class="nav-item active mr-3">
 			    	<a class="nav-link" href="#">판매자 정보</a>
 			    </li>
-				<li class="nav-item dropdown mr-3 float-right">
+				<li class="nav-item dropdown mr-3">
 					<a class="nav-link dropdown-toggle" id = "close" data-toggle="dropdown" href="javascript:void(0);" onclick="javascript:closeView();">닫기</a>
 				</li>
 			</ul>
