@@ -42,8 +42,8 @@
 	}
 	
 </script>
-	<div class = "container-sm">
-		<div>
+<header style = "width : 1400px; margin : 0 auto;">
+	<div class = "container-fluid" style = "width:1280px">
 			<a href="https://www.naver.com/">
 				<img width="60" height="40"src="https://inthenews.co.kr/data/photos/uploads/2019/10/Untitled-18.jpg">
 			</a>
@@ -51,17 +51,16 @@
 				<img width="50" height="15"src="https://imweb.me/img/naver_shopping_logo.png?44251234">
 			</a>
 				<button class="btn btn-outline-light text-dark float-right" type="button">로그인</button>
-		</div>
 	</div>
 	<hr class = "pd-0 m-0">
-	<div class = "container-sm text-center mt-5">
+	<div class = "container text-center mt-5">
 		<a href = "${pageContext.request.contextPath}/index.jsp"><img alt="" src="https://shop-phinf.pstatic.net/20200504_93/1588582588622OE2qc_PNG/main_logo_b.png"></a>
 		<form class="justify-content-end form-inline my-2 my-lg-0">
 			<input class="form-control mr-sm-2" type="text" placeholder="Search">
 			<button class="btn btn-success my-2 my-sm-0" type="button">Search</button>
 		</form>
 	</div>
-	<nav class ="navbar navbar-expand-sm">
+	<nav class ="navbar navbar-expand">
 		<div class="navbar-toggler-right">
 			<button class="navbar-toggler navbar-toggler-right" type="button"
 				data-toggle="collapse" data-target="#navb">
@@ -200,3 +199,4 @@
 		</div>
 	</nav>
 	<hr>
+</header>
