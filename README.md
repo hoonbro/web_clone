@@ -1,7 +1,7 @@
 ## :smiley: 라인프렌즈 스토어 클론코딩 프로젝트:smiley:
-> 출처 https://brand.naver.com/linefriends
-[클론 목표](https://brand.naver.com/linefriends)
-> 도저어어어어어언!
+[클론 목표](https://brand.naver.com/linefriends)  
+> 출처 https://brand.naver.com/linefriends  
+> 도저어어어어어언!  
 
 ### 프로젝트 소개
  MVC패턴을 적용해 라인 프렌즈 온라인 스토어를 클론 코딩한다.
