@@ -198,5 +198,5 @@
 			</ul>
 		</div>
 	</nav>
-	<hr>
+	<hr class = "mb-5">
 </header>
