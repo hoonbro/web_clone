@@ -50,7 +50,7 @@
 			<a href="https://shopping.naver.com/">
 				<img width="50" height="15"src="https://imweb.me/img/naver_shopping_logo.png?44251234">
 			</a>
-				<button class="btn btn-outline-light text-dark float-right" type="button">로그인</button>
+				<button class="btn btn-outline-light text-dark float-right" type="button" onclick="location.href = 'login.jsp'">로그인</button>
 	</div>
 	<hr class = "pd-0 m-0">
 	<div class = "container text-center mt-5">
@@ -72,7 +72,7 @@
 				<li class="nav-item dropdown mr-3">
 					<a class="nav-link dropdown-toggle" data-toggle="dropdown"  data-hover="dropdown" href="#">캐릭터</a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">브라운앤프렌즈</a> 
+						<a class="dropdown-item" href="./list.jsp">브라운앤프렌즈</a> 
 						<a class="dropdown-item" href="#">BT21</a> 
 						<a class="dropdown-item" href="#">브롤스타즈</a>
 					</div>
@@ -97,7 +97,7 @@
 						<a class="dropdown-item" href="#">리빙</a> 
 						<a class="dropdown-item" href="#">디지털</a> 
 						<a class="dropdown-item" href="#">패션잡화</a> 
-						<a class="dropdown-item" href="#">인형&쿠션</a> 
+						<a class="dropdown-item" href="#">인형&amp;쿠션</a> 
 					</div>
 				</li>
 				<li class="nav-item active mr-3">
