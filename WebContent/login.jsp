@@ -12,7 +12,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<title>Login</title>
+<title>로그인</title>
 <style>
 body {
 	background-color: #f5f6f7;
@@ -173,7 +173,7 @@ footer div a {
 			<span class="divide">|</span>
 			<span><a href="#">비밀번호 찾기</a></span>
 			<span class="divide">|</span>
-			<span><a href="#">회원가입</a></span>
+			<span><a href="join.jsp">회원가입</a></span>
 		</div>
 	</div>
 	<div>
