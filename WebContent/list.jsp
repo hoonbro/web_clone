@@ -60,7 +60,7 @@
 }
 
 #productlist li {
-	margin-right: 14px;
+	margin-right: 12px;
 	margin-bottom: 30px;
 	display: inline-block;
 }
@@ -85,6 +85,10 @@
 
 .product:hover .like_img_btn {
 	display: block;
+}
+
+.product img{
+	border : 1px solid #ECECEC;
 }
 
 .like {
