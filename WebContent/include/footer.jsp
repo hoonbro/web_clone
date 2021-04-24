@@ -23,7 +23,12 @@
 	border-left: none;
 	padding-left: 0px;
 }
-
+#footer_logo {
+	font-weight: 900;
+	color: #47C83E;
+	text-decoration: none;
+	margin: 0 3px;
+}
 #text1 {
 	height: 70px;
 	width: 100%;
@@ -100,9 +105,8 @@
 		<span class="text-secondary">네이버㈜는 통신판매중개자이며, 통신판매의 당사자가 아닙니다. 상품, 상품정보, 거래에 관한 의무와 책임은 판매자에게 있습니다.</span>
 	</div>
 	<div>
-		<a href="https://www.naver.com"><img
-			src="https://lh3.googleusercontent.com/proxy/8dcxBSSXlv3EWswHHi5jZ5FY0yE2XI4xus4j1EclXaRPzmPpyDx_gu3pXjBcA_glzKbI-muPC3m9eA7kXkhfMlFkm5wtbmUrCM_7bjgoEgtLNhmWFH6AXQBKopw3BJnBGzEPb8w6hmEez4MpmskLxTA"
-			width=70 height=30></a> <span class="text-secondary">Copyright ©NAVER Corp.All Rights Reserved.</span>
+		<span><a target="_blank" href="https://www.naver.com" id="footer_logo">NAVER</a></span>
+		<span class="text-secondary">Copyright ©NAVER Corp.All Rights Reserved.</span>
 	</div>
 </footer>
 <div style="height:50px"></div>
