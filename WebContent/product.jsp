@@ -21,7 +21,7 @@
 		$('#plusbtn').on('click',function() {
 			
 			cnt = Number($('#prod_cnt').text()) +1;
-			console.log(cnt);
+			console.log(cnt); 
 			$('#prod_cnt').empty();
 			$('#prod_cnt').append(cnt);
 			
