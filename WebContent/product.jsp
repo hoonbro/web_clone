@@ -14,6 +14,41 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
 
+<script>
+	$(function() {
+		var price1 = "";
+		var cnt ="";
+		$('#plusbtn').on('click',function() {
+			
+			cnt = Number($('#prod_cnt').text()) +1;
+			console.log(cnt); 
+			$('#prod_cnt').empty();
+			$('#prod_cnt').append(cnt);
+			
+			price1 = Number($('#price1').text()) + Number($('#price1').text()) / (cnt-1);
+			$('#price1').empty();
+			$('#price1').append(price1);
+		});
+		
+		$('#minusbtn').on('click',function() {
+			cnt = Number($('#prod_cnt').text()) -1;
+			
+			if(cnt >0) {
+				$('#prod_cnt').empty();
+				$('#prod_cnt').append(cnt);
+				
+				price1 = Number($('#price1').text()) - Number($('#price1').text()) / (cnt+1);
+				$('#price1').empty();
+				$('#price1').append(price1);
+			}
+			
+		});
+		
+	});
+
+</script>
+
+
 <style>
 .smalldiv1 {
 	display: inline-block;
@@ -43,7 +78,9 @@
 .con1 {
 	height: 1000px;
 }
-
+.space {
+	height : 100px;
+}
 .coldiv{
 	height : 1000px;
 }
@@ -107,6 +144,9 @@
 	font-weight : bold;
 	font-size : 12px;
 }
+.sp5 {
+	font-size : 17px;
+}
 .minidiv {
 
 	width : 20px;
@@ -117,11 +157,16 @@
 .minidiv2 {
 	height : 55px;
 }
-
+.tdcolor {
+	background-color : #F7F7F7;
+}
 #card {
 	width : 100%;
 	height : 100%;
 }
+
+
+
 
 </style>
 
@@ -254,7 +299,7 @@
 				<div class = "row mt-2">
 					<div class = "col-sm-1"></div> <!--  공백 --> 
 					<div class = "col-sm-10">
-						<strong class="st3">25,000원</strong>
+						<strong  class="st3">25000원</strong>
 					</div>
 					<div class = "col-sm-1"></div> <!--  공백 --> 
 				</div>
@@ -319,6 +364,32 @@
 				</div>
 					<div class = "col-sm-1"></div> <!--  공백 --> 
 				</div>
+				
+				
+				<div class="row mt-3">
+					<div class="col-sm-1"></div>
+					<div class="col-sm-10">
+						<hr>
+						
+						<p class="sp1">단품</p>
+						<div class = "row mt-3">
+							<div class ="col-sm-9">
+								<div class="btn-group">
+									<button type="button" id="minusbtn" class="btn border">-</button>
+									<button type="button" id="prod_cnt" class="btn btn-primary">1</button>
+									<button type="button" id="plusbtn" class="btn border">+</button>
+								</div>
+							</div>
+							<div class = "col-sm-3">
+							<strong id="price1">25000</strong><span>원</span>
+							</div>
+						</div>
+						<hr>
+						 <button type="button" class="btn btn-success btn-lg btn-block sp5">구매하기</button>
+					</div>
+					<div class="col-sm-1"></div>
+				</div>
+				
 					
 					
 					
@@ -335,8 +406,45 @@
 			
 		</div>
 	</div>
+	<div class = "space"></div>
+	<div class = "container mt-4">
+		
 	
+		<div class = "row">
+				<strong class = "mb-4">상품정보</strong>
+	 <table class="table table-bordered">
+	 	<colgroup>
+	 	<col style = "width:10%">
+	 	<col style = "width:20%">
+	 	<col style = "width:10%">
+	 	<col style = "width:20%">
+	 	</colgroup>
+	      <tr class ="sp1">
+	        <td class="tdcolor">상품번호</td>
+	        <th>5527228495</th>
+	        <td class="tdcolor">상품상태</td>
+	        <td>신상품</td>
+	      </tr>
+	      <tr class ="sp1">
+	        <td class="tdcolor">제조사</td>
+	        <td>라인프렌즈</td>
+	        <td class="tdcolor">브랜드</td>
+	        <td>라인프렌즈</td>
+	      </tr>
+	      <tr class ="sp1">
+	        <td class="tdcolor">모델명</td>
+	        <td>8809592543962</td>
+	        <td class="tdcolor">원산지</td>
+	        <td>중국</td>
+	      </tr>
+	      <tr class ="sp1">
+	        <td class="tdcolor">제조일자</td>
+	        <td colspan="3">2021.04.01.</td>
+	      </tr>
+  </table>
+		</div>
 	
+	</div>
 	
 
 
