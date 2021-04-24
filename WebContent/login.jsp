@@ -52,7 +52,7 @@ header {
 #userId, #userPwd, #login_btn {
 	width: 100%;
 	height: 40px;
-	margin: 5px;
+	margin: 5px auto;
 	border: 1px solid silver;
 }
 #userId, #userPwd {
