@@ -83,6 +83,10 @@
 	position: relative;
 }
 
+.product:hover .like_img_btn {
+	display: block;
+}
+
 .like {
 	position: absolute;
 	bottom: 12px;
@@ -90,15 +94,70 @@
 }
 
 .like_btn {
+	color: gray;
 	background-color: white;
 	border-style: none;
+	background-color: white;
 }
 
-.like_img {
-	width: 15px;
-	height: 15px;
+.like_btn:focus {
+	border: none;
+	outline: none;
+}
+
+.like_img_btn {
+	display: none; color : gray;
+	border-style: none;
+	background-color: white;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	color: gray;
+}
+
+button:focus {
+	border: none;
+	outline: none;
+}
+
+.hide_icon {
+	font-size: 25px;
+}
+
+.hide_btn {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	position: absolute;
+	bottom: 50px;
+	right: 90px;
 }
 </style>
+<script>
+	$(document).ready(function() {
+		$(".like_btn").click(function() {
+			if ($(this).attr('aria-pressed') === 'false') {
+				$(this).attr('aria-pressed', 'true');
+				$(this).css('color', '#FF4500');
+			} else {
+				$(this).attr('aria-pressed', 'false');
+				$(this).css('color', 'gray');
+			}
+		});
+
+		$(".like_img_btn").click(function() {
+			if ($(this).attr('aria-pressed') === 'false') {
+				$(this).attr('aria-pressed', 'true');
+				$(this).css('color', 'white');
+				$(this).css('background-color', '#FF4500');
+			} else {
+				$(this).attr('aria-pressed', 'false');
+				$(this).css('color', 'gray');
+				$(this).css('background-color', 'white');
+			}
+		});
+	});
+</script>
 </head>
 <body style="width: 1400px; margin: 0 auto">
 	<%@ include file="/include/header.jsp"%>
@@ -134,13 +193,17 @@
 		<ul id="productlist">
 			<li>
 				<div class=product>
-					<a href="./product.jsp">
-						<img
+					<a href="./product.jsp"> <img
 						src="https://shop-phinf.pstatic.net/20210415_168/1618480728230sFKpE_JPEG/19329562_59904539.jpg?type=f232_232">
 						<div class="productname">
 							<strong>라인프렌즈 브라운앤코니 하트 시팅 백참 인형 세트</strong><br> <strong>25,000원</strong>
 						</div>
 					</a>
+					<div class="hide_btn d-flex justify-content-center">
+						<button type="button" class="like_img_btn" aria-pressed="false">
+							<i class="hide_icon far fa-heart"></i>
+						</button>
+					</div>
 					<div class="like">
 						<button type="button" class="like_btn" aria-pressed="false">
 							<i class="far fa-heart"></i>
@@ -150,15 +213,20 @@
 			</li>
 			<li>
 				<div class=product>
-					<a href="./product.jsp">
-						<img
+					<a href="./product.jsp"> <img
 						src="https://shop-phinf.pstatic.net/20210415_225/1618480723156gaqxH_JPEG/19329478_59901152.jpg?type=f232_232">
 						<div class="productname">
 							<strong>라인프렌즈 코니 하트 시팅 인형</strong><br> <strong>18,000원</strong>
 						</div>
 					</a>
+					<div class="hide_btn d-flex justify-content-center">
+						<button type="button" class="like_img_btn" aria-pressed="false">
+							<i class="hide_icon far fa-heart"></i>
+						</button>
+					</div>
 					<div class="like">
-						<button type="button" class="like_btn" aria-pressed="false">
+						<button type="button" class="like_btn" aria-pressed="false"
+							onclick="javascript:like();">
 							<i class="far fa-heart"></i>
 						</button>
 					</div>
@@ -166,63 +234,84 @@
 			</li>
 			<li>
 				<div class=product>
-					<a href="./product.jsp">
-						<img
+					<a href="./product.jsp"> <img
 						src="https://shop-phinf.pstatic.net/20210415_31/1618480718203y3IcU_JPEG/19328993_59900969.jpg?type=f232_232">
 						<div class="productname">
 							<strong>라인프렌즈 브라운 하트 시팅 인형</strong><br> <strong>18,000원</strong>
 						</div>
-						<div class="like">
-							<button type="button" class="like_btn" aria-pressed="false">
-								<i class="far fa-heart"></i>
-							</button>
-						</div>
 					</a>
+					<div class="hide_btn d-flex justify-content-center">
+						<button type="button" class="like_img_btn" aria-pressed="false">
+							<i class="hide_icon far fa-heart"></i>
+						</button>
+					</div>
+					<div class="like">
+						<button type="button" class="like_btn" aria-pressed="false"
+							onclick="javascript:like();">
+							<i class="far fa-heart"></i>
+						</button>
+					</div>
 				</div>
 			</li>
 			<li>
 				<div class=product>
-					<a href="./product.jsp">
-						<img
+					<a href="./product.jsp"> <img
 						src="https://shop-phinf.pstatic.net/20210415_20/16184807131587a8oF_JPEG/19328850_59904538.jpg?type=f232_232">
 						<div class="productname">
 							<strong>라인프렌즈 브라운앤코니 큐피드 백참 인형 세트</strong><br> <strong>25,000원</strong>
 						</div>
-						<div class="like">
-							<button type="button" class="like_btn" aria-pressed="false">
-								<i class="far fa-heart"></i>
-							</button>
-						</div>
+
 					</a>
+					<div class="hide_btn d-flex justify-content-center">
+						<button type="button" class="like_img_btn" aria-pressed="false">
+							<i class="hide_icon far fa-heart"></i>
+						</button>
+					</div>
+					<div class="like">
+						<button type="button" class="like_btn" aria-pressed="false"
+							onclick="javascript:like();">
+							<i class="far fa-heart"></i>
+						</button>
+					</div>
 				</div>
 			</li>
 			<li>
 				<div class=product>
-					<a href="./product.jsp">
-						<img
+					<a href="./product.jsp"> <img
 						src="https://shop-phinf.pstatic.net/20210415_279/1618480707866TNgkb_JPEG/19328514_59900948.jpg?type=f232_232">
 						<div class="productname">
 							<strong>라인프렌즈 코니 큐피드 스탠딩 인형</strong><br> <strong>20,000원</strong>
 						</div>
 					</a>
+					<div class="hide_btn d-flex justify-content-center">
+						<button type="button" class="like_img_btn" aria-pressed="false">
+							<i class="hide_icon far fa-heart"></i>
+						</button>
+					</div>
 					<div class="like">
-						<button type="button" class="like_btn" aria-pressed="false">
+						<button type="button" class="like_btn" aria-pressed="false"
+							onclick="javascript:like();">
 							<i class="far fa-heart"></i>
 						</button>
 					</div>
 				</div>
 			</li>
-<li>
+			<li>
 				<div class=product>
-					<a href="./product.jsp">
-						<img
+					<a href="./product.jsp"> <img
 						src="https://shop-phinf.pstatic.net/20210415_168/1618480728230sFKpE_JPEG/19329562_59904539.jpg?type=f232_232">
 						<div class="productname">
 							<strong>라인프렌즈 브라운앤코니 하트 시팅 백참 인형 세트</strong><br> <strong>25,000원</strong>
 						</div>
 					</a>
+					<div class="hide_btn d-flex justify-content-center">
+						<button type="button" class="like_img_btn" aria-pressed="false">
+							<i class="hide_icon far fa-heart"></i>
+						</button>
+					</div>
 					<div class="like">
-						<button type="button" class="like_btn" aria-pressed="false">
+						<button type="button" class="like_btn" aria-pressed="false"
+							onclick="javascript:like();">
 							<i class="far fa-heart"></i>
 						</button>
 					</div>
@@ -230,15 +319,20 @@
 			</li>
 			<li>
 				<div class=product>
-					<a href="./product.jsp">
-						<img
+					<a href="./product.jsp"> <img
 						src="https://shop-phinf.pstatic.net/20210415_225/1618480723156gaqxH_JPEG/19329478_59901152.jpg?type=f232_232">
 						<div class="productname">
 							<strong>라인프렌즈 코니 하트 시팅 인형</strong><br> <strong>18,000원</strong>
 						</div>
 					</a>
+					<div class="hide_btn d-flex justify-content-center">
+						<button type="button" class="like_img_btn" aria-pressed="false">
+							<i class="hide_icon far fa-heart"></i>
+						</button>
+					</div>
 					<div class="like">
-						<button type="button" class="like_btn" aria-pressed="false">
+						<button type="button" class="like_btn" aria-pressed="false"
+							onclick="javascript:like();">
 							<i class="far fa-heart"></i>
 						</button>
 					</div>
@@ -246,47 +340,62 @@
 			</li>
 			<li>
 				<div class=product>
-					<a href="./product.jsp">
-						<img
+					<a href="./product.jsp"> <img
 						src="https://shop-phinf.pstatic.net/20210415_31/1618480718203y3IcU_JPEG/19328993_59900969.jpg?type=f232_232">
 						<div class="productname">
 							<strong>라인프렌즈 브라운 하트 시팅 인형</strong><br> <strong>18,000원</strong>
 						</div>
-						<div class="like">
-							<button type="button" class="like_btn" aria-pressed="false">
-								<i class="far fa-heart"></i>
-							</button>
-						</div>
 					</a>
+					<div class="hide_btn d-flex justify-content-center">
+						<button type="button" class="like_img_btn" aria-pressed="false">
+							<i class="hide_icon far fa-heart"></i>
+						</button>
+					</div>
+					<div class="like">
+						<button type="button" class="like_btn" aria-pressed="false"
+							onclick="javascript:like();">
+							<i class="far fa-heart"></i>
+						</button>
+					</div>
 				</div>
 			</li>
 			<li>
 				<div class=product>
-					<a href="./product.jsp">
-						<img
+					<a href="./product.jsp"> <img
 						src="https://shop-phinf.pstatic.net/20210415_20/16184807131587a8oF_JPEG/19328850_59904538.jpg?type=f232_232">
 						<div class="productname">
 							<strong>라인프렌즈 브라운앤코니 큐피드 백참 인형 세트</strong><br> <strong>25,000원</strong>
 						</div>
-						<div class="like">
-							<button type="button" class="like_btn" aria-pressed="false">
-								<i class="far fa-heart"></i>
-							</button>
-						</div>
 					</a>
+					<div class="hide_btn d-flex justify-content-center">
+						<button type="button" class="like_img_btn" aria-pressed="false">
+							<i class="hide_icon far fa-heart"></i>
+						</button>
+					</div>
+					<div class="like">
+						<button type="button" class="like_btn" aria-pressed="false"
+							onclick="javascript:like();">
+							<i class="far fa-heart"></i>
+						</button>
+					</div>
 				</div>
 			</li>
 			<li>
 				<div class=product>
-					<a href="./product.jsp">
-						<img
+					<a href="./product.jsp"> <img
 						src="https://shop-phinf.pstatic.net/20210415_279/1618480707866TNgkb_JPEG/19328514_59900948.jpg?type=f232_232">
 						<div class="productname">
 							<strong>라인프렌즈 코니 큐피드 스탠딩 인형</strong><br> <strong>20,000원</strong>
 						</div>
 					</a>
+					<div class="hide_btn d-flex justify-content-center">
+						<button type="button" class="like_img_btn" aria-pressed="false">
+							<i class="hide_icon far fa-heart"></i>
+						</button>
+					</div>
 					<div class="like">
-						<button type="button" class="like_btn" aria-pressed="false">
+						<button type="button" class="like_btn" aria-pressed="false"
+							onclick="javascript:like();">
 							<i class="far fa-heart"></i>
 						</button>
 					</div>
