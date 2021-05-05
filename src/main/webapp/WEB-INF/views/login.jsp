@@ -173,7 +173,7 @@ footer div a {
 			<span class="divide">|</span>
 			<span><a href="#">비밀번호 찾기</a></span>
 			<span class="divide">|</span>
-			<span><a href="join.jsp">회원가입</a></span>
+			<span><a href="${pageContext.request.contextPath}/member/join">회원가입</a></span>
 		</div>
 	</div>
 	<div>

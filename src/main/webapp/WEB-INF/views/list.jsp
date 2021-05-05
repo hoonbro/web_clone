@@ -193,7 +193,7 @@ button:focus {
 		<ul id="productlist">
 			<li>
 				<div class=product>
-					<a href="./product.jsp"> <img
+					<a href="${root }/product/detail"> <img
 						src="https://shop-phinf.pstatic.net/20210415_168/1618480728230sFKpE_JPEG/19329562_59904539.jpg?type=f232_232">
 						<div class="productname">
 							<strong>라인프렌즈 브라운앤코니 하트 시팅 백참 인형 세트</strong><br> <strong>25,000원</strong>
