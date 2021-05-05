@@ -172,7 +172,7 @@ button:focus {
 					<li><a class="small_li" href="#"> > 캐릭터</a></li>
 					<li class="dropdown " id="small_ul"><a
 						class="dropdown-toggle small_li" data-toggle="dropdown"
-						style="color: black;"> > <b>브라운앤프렌즈(총 n개)</b></a>
+						style="color: black;"> > <b>브라운앤프렌즈(총 ${list.size()}개)</b></a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="#">브라운앤프렌즈</a> <a
 								class="dropdown-item" href="#">BT21</a> <a class="dropdown-item"
@@ -191,12 +191,13 @@ button:focus {
 		</div>
 		<!-- 상품 리스트 -->
 		<ul id="productlist">
-			<li>
+			<c:forEach var = "item" items = "${list }">
+				<li>
 				<div class=product>
-					<a href="${root }/product/detail"> <img
-						src="https://shop-phinf.pstatic.net/20210415_168/1618480728230sFKpE_JPEG/19329562_59904539.jpg?type=f232_232">
+					<a href="${root }/product/detail?pNum = ${item.pNum}"> <img
+						src="${item.pUrl }">
 						<div class="productname">
-							<strong>라인프렌즈 브라운앤코니 하트 시팅 백참 인형 세트</strong><br> <strong>25,000원</strong>
+							<strong>${item.pName }</strong><br> <strong>${item.pPrice}원</strong>
 						</div>
 					</a>
 					<div class="hide_btn d-flex justify-content-center">
@@ -211,196 +212,7 @@ button:focus {
 					</div>
 				</div>
 			</li>
-			<li>
-				<div class=product>
-					<a href="./product.jsp"> <img
-						src="https://shop-phinf.pstatic.net/20210415_225/1618480723156gaqxH_JPEG/19329478_59901152.jpg?type=f232_232">
-						<div class="productname">
-							<strong>라인프렌즈 코니 하트 시팅 인형</strong><br> <strong>18,000원</strong>
-						</div>
-					</a>
-					<div class="hide_btn d-flex justify-content-center">
-						<button type="button" class="like_img_btn" aria-pressed="false">
-							<i class="hide_icon far fa-heart"></i>
-						</button>
-					</div>
-					<div class="like">
-						<button type="button" class="like_btn" aria-pressed="false"
-							onclick="javascript:like();">
-							<i class="far fa-heart"></i>
-						</button>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class=product>
-					<a href="./product.jsp"> <img
-						src="https://shop-phinf.pstatic.net/20210415_31/1618480718203y3IcU_JPEG/19328993_59900969.jpg?type=f232_232">
-						<div class="productname">
-							<strong>라인프렌즈 브라운 하트 시팅 인형</strong><br> <strong>18,000원</strong>
-						</div>
-					</a>
-					<div class="hide_btn d-flex justify-content-center">
-						<button type="button" class="like_img_btn" aria-pressed="false">
-							<i class="hide_icon far fa-heart"></i>
-						</button>
-					</div>
-					<div class="like">
-						<button type="button" class="like_btn" aria-pressed="false"
-							onclick="javascript:like();">
-							<i class="far fa-heart"></i>
-						</button>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class=product>
-					<a href="./product.jsp"> <img
-						src="https://shop-phinf.pstatic.net/20210415_20/16184807131587a8oF_JPEG/19328850_59904538.jpg?type=f232_232">
-						<div class="productname">
-							<strong>라인프렌즈 브라운앤코니 큐피드 백참 인형 세트</strong><br> <strong>25,000원</strong>
-						</div>
-
-					</a>
-					<div class="hide_btn d-flex justify-content-center">
-						<button type="button" class="like_img_btn" aria-pressed="false">
-							<i class="hide_icon far fa-heart"></i>
-						</button>
-					</div>
-					<div class="like">
-						<button type="button" class="like_btn" aria-pressed="false"
-							onclick="javascript:like();">
-							<i class="far fa-heart"></i>
-						</button>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class=product>
-					<a href="./product.jsp"> <img
-						src="https://shop-phinf.pstatic.net/20210415_279/1618480707866TNgkb_JPEG/19328514_59900948.jpg?type=f232_232">
-						<div class="productname">
-							<strong>라인프렌즈 코니 큐피드 스탠딩 인형</strong><br> <strong>20,000원</strong>
-						</div>
-					</a>
-					<div class="hide_btn d-flex justify-content-center">
-						<button type="button" class="like_img_btn" aria-pressed="false">
-							<i class="hide_icon far fa-heart"></i>
-						</button>
-					</div>
-					<div class="like">
-						<button type="button" class="like_btn" aria-pressed="false"
-							onclick="javascript:like();">
-							<i class="far fa-heart"></i>
-						</button>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class=product>
-					<a href="./product.jsp"> <img
-						src="https://shop-phinf.pstatic.net/20210415_168/1618480728230sFKpE_JPEG/19329562_59904539.jpg?type=f232_232">
-						<div class="productname">
-							<strong>라인프렌즈 브라운앤코니 하트 시팅 백참 인형 세트</strong><br> <strong>25,000원</strong>
-						</div>
-					</a>
-					<div class="hide_btn d-flex justify-content-center">
-						<button type="button" class="like_img_btn" aria-pressed="false">
-							<i class="hide_icon far fa-heart"></i>
-						</button>
-					</div>
-					<div class="like">
-						<button type="button" class="like_btn" aria-pressed="false"
-							onclick="javascript:like();">
-							<i class="far fa-heart"></i>
-						</button>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class=product>
-					<a href="./product.jsp"> <img
-						src="https://shop-phinf.pstatic.net/20210415_225/1618480723156gaqxH_JPEG/19329478_59901152.jpg?type=f232_232">
-						<div class="productname">
-							<strong>라인프렌즈 코니 하트 시팅 인형</strong><br> <strong>18,000원</strong>
-						</div>
-					</a>
-					<div class="hide_btn d-flex justify-content-center">
-						<button type="button" class="like_img_btn" aria-pressed="false">
-							<i class="hide_icon far fa-heart"></i>
-						</button>
-					</div>
-					<div class="like">
-						<button type="button" class="like_btn" aria-pressed="false"
-							onclick="javascript:like();">
-							<i class="far fa-heart"></i>
-						</button>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class=product>
-					<a href="./product.jsp"> <img
-						src="https://shop-phinf.pstatic.net/20210415_31/1618480718203y3IcU_JPEG/19328993_59900969.jpg?type=f232_232">
-						<div class="productname">
-							<strong>라인프렌즈 브라운 하트 시팅 인형</strong><br> <strong>18,000원</strong>
-						</div>
-					</a>
-					<div class="hide_btn d-flex justify-content-center">
-						<button type="button" class="like_img_btn" aria-pressed="false">
-							<i class="hide_icon far fa-heart"></i>
-						</button>
-					</div>
-					<div class="like">
-						<button type="button" class="like_btn" aria-pressed="false"
-							onclick="javascript:like();">
-							<i class="far fa-heart"></i>
-						</button>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class=product>
-					<a href="./product.jsp"> <img
-						src="https://shop-phinf.pstatic.net/20210415_20/16184807131587a8oF_JPEG/19328850_59904538.jpg?type=f232_232">
-						<div class="productname">
-							<strong>라인프렌즈 브라운앤코니 큐피드 백참 인형 세트</strong><br> <strong>25,000원</strong>
-						</div>
-					</a>
-					<div class="hide_btn d-flex justify-content-center">
-						<button type="button" class="like_img_btn" aria-pressed="false">
-							<i class="hide_icon far fa-heart"></i>
-						</button>
-					</div>
-					<div class="like">
-						<button type="button" class="like_btn" aria-pressed="false"
-							onclick="javascript:like();">
-							<i class="far fa-heart"></i>
-						</button>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class=product>
-					<a href="./product.jsp"> <img
-						src="https://shop-phinf.pstatic.net/20210415_279/1618480707866TNgkb_JPEG/19328514_59900948.jpg?type=f232_232">
-						<div class="productname">
-							<strong>라인프렌즈 코니 큐피드 스탠딩 인형</strong><br> <strong>20,000원</strong>
-						</div>
-					</a>
-					<div class="hide_btn d-flex justify-content-center">
-						<button type="button" class="like_img_btn" aria-pressed="false">
-							<i class="hide_icon far fa-heart"></i>
-						</button>
-					</div>
-					<div class="like">
-						<button type="button" class="like_btn" aria-pressed="false"
-							onclick="javascript:like();">
-							<i class="far fa-heart"></i>
-						</button>
-					</div>
-				</div>
-			</li>
+			</c:forEach>
 		</ul>
 	</div>
 	<%@ include file="./include/footer.jsp"%>
