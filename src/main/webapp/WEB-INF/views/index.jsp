@@ -54,26 +54,37 @@ p {
 </style>
 
 </head>
-<body>
+<body> 
+      
 	<%@ include file="./include/header.jsp"%>
-		<div>fdsafdasdfas</div>
+		
 			<div id="demo" class="carousel slide" data-ride="carousel">
 		<ul class="carousel-indicators" style="z-index: 1">
 			<li data-target="#demo" data-slide-to="0" class=""></li>
 			<li data-target="#demo" data-slide-to="1" class="active"></li>
 			<li data-target="#demo" data-slide-to="2" class=""></li>
 		</ul>
-		<div class="carousel-inner">
+	<div class="carousel-inner">
 			<div class="carousel-item">
-				<img src="https://www.visitcalifornia.com/sites/visitcalifornia.com/files/styles/welcome_image/public/LosAngeles_Hero_Killackey_1280x642_sized.jpg" alt="Los Angeles"
-					style="width: 100%; height: 100%;">
+				<img
+					src="https://shop-phinf.pstatic.net/20210413_32/1618277956569uyIfN_JPEG/main_pc_bn_wadiz2.jpg"
+					alt="">
 			</div>
 			<div class="carousel-item active">
-				<img src="https://image.chosun.com/sitedata/image/202010/20/2020102000536_0.png" alt="Chicago"
-					style="width: 100%; height: 100%;">
+				<img
+					src="https://shop-phinf.pstatic.net/20210415_289/16184827852702p7d0_JPEG/promotion_banner_pc_.jpg"
+					alt="">
 			</div>
 			<div class="carousel-item">
-				<img src="https://youimg1.tripcdn.com/target/100a10000000pfidn47CE_D_1180_558.jpg" alt="New York" style="width: 100%; height: 100%;">
+				<img
+					src="https://shop-phinf.pstatic.net/20210317_182/1615977460065NVmGR_JPEG/PROMOTION_PC.jpg"
+					alt="">
+			</div>
+			<div class="carousel-item">
+				<img
+					src="https://shop-phinf.pstatic.net/20210317_231/1615977673371QXVB2_JPEG/PROMOTION_PC_28129.jpg"
+					alt="">
+
 			</div>
 		</div>
 		<a class="carousel-control-prev" href="#demo" data-slide="prev"> <span
