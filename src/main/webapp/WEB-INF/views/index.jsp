@@ -12,46 +12,8 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/css/index.css">
 <title>Insert title here</title>
-<style>
-.img1 {
-	width: 100%;
-	height: 120%;
-	border-radius: 30px;
-}
-.img2 {
-	width : 100%;
-	height : 80%;
-	border-radius : 10px;
-}
-
-.p1 {
-	font-size : small;
-}
-.p2 {
-	font-size : xx-small;
-	
-}
-
-p {
-	overflow : hidden;
-	text-overflow : ellipsis;
-	position : absolute;
-	height : 80px;
-}
-
-.div1 {
-	height : 90px;
-}
-
-.st1 {
-	font-size : 15px;
-}
-
-
-
-
-</style>
 
 </head>
 <body>  
