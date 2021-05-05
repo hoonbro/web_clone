@@ -1,0 +1,19 @@
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+.dropdown .dropdown-menu {
+	display: none;
+	}
+.nav-link{
+	color : black;
+}
+.nav-link:hover {
+	font-weight : bolder;
+  	color: skyblue;
+}
+.navbar-nav {
+  display: inline-block;
+}
+.navbar-nav>li {
+   display: inline-block;
+}
