@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href ="/css/Login.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
@@ -13,131 +14,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <title>로그인</title>
-<style>
-body {
-	background-color: #f5f6f7;
-}
-header, section, footer {
-	position: relative;
-	max-width: 460px;
-	margin: 10px auto;
-}
-header {
-	height: 170px;
-}
-#select_lang {
-	font-size: 12px;
-}
-#lang {
-	position: absolute;
-	right: 0px;
-}
-#login_logo {
-	font-size: 60px;
-	font-weight: 900;
-	color: #47C83E;
-	text-decoration: none;
-}
-#logo {
-	width: 210px;
-	height: 40px;
-	line-height: 40px;
-	margin: 0 auto;
-}
-#content1 {
-	margin: 0 auto 40px;
-	border-bottom: 1px solid silver;
-	width: 440px;
-}
-#userId, #userPwd, #login_btn {
-	width: 100%;
-	height: 40px;
-	margin: 5px;
-	border: 1px solid silver;
-}
-#userId, #userPwd {
-	font-size: 13px;
-}
-#login_btn {
-	background-color: #47C83E;
-	height: 50px;
-	margin: 7px 0;
-	color: white;
-}
-#login_save, #security {
-	display: none;
-}
-#login_save + span {
-	display: inline-block;
-	width: 24px;
-	height: 24px;
-	margin: -2px 10px 0 0;
-	vertical-align: middle;
-	cursor: pointer;
-	background: url(https://t1.daumcdn.net/cfile/tistory/99B9D6455B6C0C330B) left top no-repeat;
-	background-size: cover;
-}
-#login_save:checked + span {
-	background: url(https://t1.daumcdn.net/cfile/tistory/99B9D6455B6C0C330B) -26px top no-repeat;
-	background-size: cover;
-}
-#security + span, #security:checked + span + span {
-	display: none;
-}
-#security + span + span {
-	display: inline-block;
-	color: gray;
-	font-weight: 700;
-	margin: 0 5px;
-}
-#security:checked + span {
-	display: inline-block;
-	color: #47C83E;
-	font-weight: 700;
-	margin: 0 5px;
-}
-#content2 {
-	margin: 40px auto;
-	width: 440px;
-}
-#content2 div {
-	text-align: center;
-}
-#QRcode, #tempNum {
-	margin: 5px;
-	width: 200px;
-	height: 50px;
-	border: 1px solid #47C83E;
-	background-color: white;
-}
-#navs span a {
-	color: gray;
-	text-decoration: none;
-}
-.divide {
-	color: silver;
-	margin: 0 3px
-}
-section {
-	padding-bottom: 40px;
-}
-footer {
-	height: 60px;
-	padding: 10px 0;
-	text-align: center;
-	font-size: 13px;
-}
-footer div a {
-	text-decoration: none;
-	color: black;
-}
-#footer_logo {
-	font-weight: 900;
-	color: #47C83E;
-	text-decoration: none;
-	margin: 0 3px;
-}
-</style>
+
 </head>
 <body>
 <header>
