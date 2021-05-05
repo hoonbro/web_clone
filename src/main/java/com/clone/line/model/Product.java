@@ -1,16 +1,16 @@
 package com.clone.line.model;
 
 public class Product {
-	private int pNum;
+	private String pNum;
 	private String pName;
 	private int pPrice;
 	private String pUrl;
 	private int pTotal;
 	private String pDate;
-	public int getpNum() {
+	public String getpNum() {
 		return pNum;
 	}
-	public void setpNum(int pNum) {
+	public void setpNum(String pNum) {
 		this.pNum = pNum;
 	}
 	public String getpName() {
@@ -42,6 +42,10 @@ public class Product {
 	}
 	public void setpDate(String pDate) {
 		this.pDate = pDate;
+	}
+	@Override
+	public String toString() {
+		return "Product [pNum=" + pNum + ", pName=" + pName + ", pPrice=" + pPrice + ", pUrl=" + pUrl + ", pTotal=" + pTotal + ", pDate=" + pDate + "]";
 	}
 	
 	
