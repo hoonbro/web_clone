@@ -6,5 +6,8 @@ import java.util.List;
 import com.clone.line.model.Product;
 
 public interface ProductMapper {
-	public List<Product> getList() throws SQLException;;
+	public List<Product> getList() throws SQLException;
+	
+	//restful
+	public List<Product> orderby(String data);
 }

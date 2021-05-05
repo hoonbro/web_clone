@@ -7,4 +7,7 @@ import com.clone.line.model.Product;
 
 public interface ProductService {
 	public List<Product> getList() throws SQLException;
+	
+	//restful
+	public List<Product> orderby(String data);
 }

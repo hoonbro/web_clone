@@ -20,4 +20,10 @@ public class ProductServiceImpl implements ProductService {
 	public List<Product> getList() throws SQLException {
 		return sqlSession.getMapper(ProductMapper.class).getList();
 	}
+
+	@Override
+	public List<Product> orderby(String data) {
+		System.out.println(data);
+		return sqlSession.getMapper(ProductMapper.class).orderby(data);
+	}
 }

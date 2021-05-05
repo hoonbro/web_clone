@@ -15,11 +15,11 @@
 			<a href="https://shopping.naver.com/">
 				<img width="50" height="15"src="https://imweb.me/img/naver_shopping_logo.png?44251234">
 			</a>
-				<button class="btn btn-outline-light text-dark float-right" type="button" onclick="location.href = '${root}/member/login'">로그인</button>
+				<button class="btn btn-outline-light text-dark float-right" type="button" onclick="location.href = '/member/login'">로그인</button>
 	</div>
 	<hr class = "pd-0 m-0">
 	<div class = "container text-center mt-5">
-		<a href = "${root}/"><img alt="" src="https://shop-phinf.pstatic.net/20200504_93/1588582588622OE2qc_PNG/main_logo_b.png"></a>
+		<a href = "/"><img alt="" src="https://shop-phinf.pstatic.net/20200504_93/1588582588622OE2qc_PNG/main_logo_b.png"></a>
 		<form class="justify-content-end form-inline my-2 my-lg-0">
 			<input class="form-control mr-sm-2" type="text" placeholder="Search">
 			<button class="btn btn-success my-2 my-sm-0" type="button">Search</button>
@@ -37,7 +37,7 @@
 				<li class="nav-item dropdown mr-3">
 					<a class="nav-link dropdown-toggle" data-toggle="dropdown"  data-hover="dropdown" href="#">캐릭터</a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="${root}/product/list">브라운앤프렌즈</a> 
+						<a class="dropdown-item" href="/product/list">브라운앤프렌즈</a> 
 						<a class="dropdown-item" href="#">BT21</a> 
 						<a class="dropdown-item" href="#">브롤스타즈</a>
 					</div>
