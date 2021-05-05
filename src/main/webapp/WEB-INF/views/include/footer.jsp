@@ -1,40 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<style>
-.footer-table th, .footer-table td {
-	text-align: left;
-	margin-left: 50px;
-	padding-left: 80px;
-}
+<link rel = "stylesheet" href = "/css/Footer.css">
 
-.footer-table td:first-child, .footer-table th:first-child {
-	padding-left: 0px;
-}
-
-.footer-table td div, .row1 span {
-	display: inline-block;
-	border-left: 1px solid silver;
-	padding: 10px;
-	height: 2px;
-	line-height: 2px;
-}
-
-.footer-table td div:first-child, .row1 span:first-child {
-	border-left: none;
-	padding-left: 0px;
-}
-#footer_logo {
-	font-weight: 900;
-	color: #47C83E;
-	text-decoration: none;
-	margin: 0 3px;
-}
-#text1 {
-	height: 70px;
-	width: 100%;
-	padding: 22px;
-}
-</style>
 <div style="height:50px"></div>
 <footer style="width:1400px; margin:auto">
 	<div id="text1" class="bg-light">

@@ -2,48 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="root" value="${pageContext.request.contextPath}" />
-<style>
-.dropdown:hover .dropdown-menu {
-	display: block;
-}
-.dropdown .dropdown-menu {
-	display: none;
-	}
-.nav-link{
-	color : black;
-}
-.nav-link:hover {
-	font-weight : bolder;
-  	color: skyblue;
-}
-.navbar-nav {
-  display: inline-block;
-}
-.navbar-nav>li {
-   display: inline-block;
-}
-</style>
-<script>
-	$(function() {
-		$('.dropdown').hover(function() {
-			$(this).addClass('open');
-		}, function() {
-			$(this).removeClass('open');
-		});
-		
-	});
-	function moreView() {
-		$('#moreList').css('display', "inline"); 
-		$('#moreList').addClass("navbar-nav") ;
-		$('#more').css('visibility', 'hidden');
-		
-	}
-	function closeView() {
-		$('#moreList').css('display', "none"); 
-		$('#more').css('visibility', 'visible');
-	}
-	
-</script>
+
+<link rel="stylesheet" href="/css/header.css">
+
+<script src = "/js/header.js"></script>
+
 <header style = "width : 1400px; margin : 0 auto;">
 	<div class = "container-fluid" style = "width:1280px">
 			<a href="https://www.naver.com/">

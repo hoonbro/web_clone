@@ -6,47 +6,18 @@
 <meta charset="UTF-8">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel = "stylesheet" href = "/css/ProductDetail.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src = "/js/ProductDetail.js"></script>
+
 <title>Insert title here</title>
 
-<script>
-	$(function() {
-		var price1 = "";
-		var cnt ="";
-		$('#plusbtn').on('click',function() {
-			
-			cnt = Number($('#prod_cnt').text()) +1;
-			console.log(cnt); 
-			$('#prod_cnt').empty();
-			$('#prod_cnt').append(cnt);
-			
-			price1 = Number($('#price1').text()) + Number($('#price1').text()) / (cnt-1);
-			$('#price1').empty();
-			$('#price1').append(price1);
-		});
-		
-		$('#minusbtn').on('click',function() {
-			cnt = Number($('#prod_cnt').text()) -1;
-			
-			if(cnt >0) {
-				$('#prod_cnt').empty();
-				$('#prod_cnt').append(cnt);
-				
-				price1 = Number($('#price1').text()) - Number($('#price1').text()) / (cnt+1);
-				$('#price1').empty();
-				$('#price1').append(price1);
-			}
-			
-		});
-		
-	});
 
-</script>
 
 
 
