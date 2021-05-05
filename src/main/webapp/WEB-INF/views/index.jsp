@@ -55,7 +55,6 @@ p {
 
 </head>
 <body>  
-      dfdfdfdf
 	<%@ include file="./include/header.jsp"%>
 		
 			<div id="demo" class="carousel slide" data-ride="carousel">
