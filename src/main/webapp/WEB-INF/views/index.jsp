@@ -54,7 +54,7 @@ p {
 </style>
 
 </head>
-<body> 
+<body>  
       
 	<%@ include file="./include/header.jsp"%>
 		
