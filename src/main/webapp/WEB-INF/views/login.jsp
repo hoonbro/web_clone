@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="root" value="${pageContext.request.contextPath}"/>
+<c:if test="${cookie.saveId.value ne null}">
+	<c:set var="saveId" value="${cookie.saveId.value}"/>
+	<c:set var="idck" value=" checked=\"checked\""/>
+</c:if>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,7 +58,7 @@ header {
 #userId, #userPwd, #login_btn {
 	width: 100%;
 	height: 40px;
-	margin: 5px;
+	margin: 5px auto;
 	border: 1px solid silver;
 }
 #userId, #userPwd {
@@ -154,16 +160,21 @@ footer div a {
 </header>
 <section>
 	<div id="content1">
-		<div><input type="text" name="userId" id="userId" placeholder=" 아이디"></div>
-		<div><input type="password" name="userPwd" id="userPwd" placeholder=" 비밀번호"></div>
-		<div><button id="login_btn">로그인</button></div>
-		<div style="position: relative; height: 40px; line-height: 40px">
-			<span><label><input type="checkbox" checked="checked" id="login_save"><span></span>로그인 상태 유지</label></span>
-			<span style="position: absolute; right: 0px">
-				<a href="#" style="text-decoration: none; color: black">IP 보안</a>
-				<label><input type="checkbox" checked="checked" id="security"><span>ON</span><span>OFF</span></label>
-			</span>
-		</div>
+		<form method="post" action="${root}/member/login">
+			<div>
+				<div><input type="text" name="userId" id="userId" placeholder=" 아이디" value="${saveId}"></div>
+				<div><input type="password" name="userPwd" id="userPwd" placeholder=" 비밀번호"></div>
+				<div style="font-size:12px; color: red">${msg}</div>
+				<div><input type="submit" value="로그인" id="login_btn"></div>
+			</div>
+			<div style="position: relative; height: 40px; line-height: 40px">
+				<span><label><input type="checkbox" id="login_save" name="save" value="saveok" ${idck}><span></span>로그인 상태 유지</label></span>
+				<span style="position: absolute; right: 0px">
+					<a href="#" style="text-decoration: none; color: black">IP 보안</a>
+					<label><input type="checkbox" checked="checked" id="security" name="security"><span>ON</span><span>OFF</span></label>
+				</span>
+			</div>
+		</form>
 	</div>
 	<div id="content2">
 		<div style="font-size: 19px">더욱 간편한 로그인</div>
@@ -173,7 +184,7 @@ footer div a {
 			<span class="divide">|</span>
 			<span><a href="#">비밀번호 찾기</a></span>
 			<span class="divide">|</span>
-			<span><a href="${pageContext.request.contextPath}/member/join">회원가입</a></span>
+			<span><a href="${root}/member/join">회원가입</a></span>
 		</div>
 	</div>
 	<div>

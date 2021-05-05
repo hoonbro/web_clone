@@ -4,5 +4,15 @@
 
 <mapper namespace="com.clone.line.model.mapper.MemberMapper">
 
+	<select id="login" parameterType="map" resultType="member">
+		select userId, userPwd, userName, userEmail, userAddress
+		from member
+		where userid = #{userId} and userpwd = #{userPwd}
+	</select>
+	
+	<insert id="join" parameterType="member">
+		insert into member (userId, userPwd, userName, userEmail, userAddress)
+		values (#{userId}, #{userPwd}, #{userName}, #{userEmail}, #{userAddress})
+	</insert>
 	
 </mapper>
