@@ -6,4 +6,9 @@
 	<select id="getList" resultType="product">
 		select * from product
 	</select>	
+	
+	<select id="orderby" parameterType="String" resultType="product">
+		select * from product
+		order by #{data}
+	</select>
 </mapper>

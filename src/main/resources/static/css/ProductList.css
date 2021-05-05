@@ -21,6 +21,14 @@
 	text-decoration: none;
 }
 
+.orderbyBtn{
+	font-size : 13px;
+	color: gray;
+	background-color: white;
+	border-style: none;
+	background-color: white;
+}
+
 .order li {
 	float: left;
 	margin-left: 10px;

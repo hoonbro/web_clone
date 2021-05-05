@@ -16,7 +16,53 @@
 
 <link rel="stylesheet" href="/css/ProductList.css">
 <script src = "/js/ProductList.js"></script>
-
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".orderbyBtn").click(function(){
+		let data = $(this).attr('value'); 
+		$.ajax({
+			url:'${root}/restProduct/orderby/' + data,
+			type:'GET',
+			contentType:'application/json;charset=utf-8',
+			dataType:'json',
+			success:function(products){
+				makeList(products);
+			},
+			error:function(xhr,status,msg){
+				console.log("상태값 : " + status + " Http에러메시지 : "+msg);
+			}
+		});
+	});
+});
+function makeList(products){
+	$('#productlist').empty();
+	$(products).each(function (index, item){
+		let str = `
+		<li>
+		<div class=product>
+			<a href="/product/detail?pNum =  ${'${item.pNum}'}"> <img
+				src="${'${item.pUrl}'}">
+				<div class="productname">
+					<strong>${'${item.pName}'}</strong><br> <strong>${'${item.pPrice}'}원</strong>
+				</div>
+			</a>
+			<div class="hide_btn d-flex justify-content-center">
+				<button type="button" class="like_img_btn" aria-pressed="false">
+					<i class="hide_icon far fa-heart"></i>
+				</button>
+			</div>
+			<div class="like">
+				<button type="button" class="like_btn" aria-pressed="false">
+					<i class="far fa-heart"></i>
+				</button>
+			</div>
+		</div>
+		</li>
+		`;
+		$('#productlist').append(str);
+	});
+}
+</script>
 <title>Insert title here</title>
 </head>
 <body style="width: 1400px; margin: 0 auto">
@@ -34,7 +80,7 @@
 						class="dropdown-toggle small_li" data-toggle="dropdown"
 						style="color: black;"> > <b>브라운앤프렌즈(총 ${list.size()}개)</b></a>
 						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">브라운앤프렌즈</a> <a
+							<a class="dropdown-item" href="${root}/product/list">브라운앤프렌즈</a> <a
 								class="dropdown-item" href="#">BT21</a> <a class="dropdown-item"
 								href="#">브롤스타즈</a>
 						</div></li>
@@ -44,9 +90,9 @@
 		<!-- 정렬 -->
 		<div class="mt-3 mb-3">
 			<ul class="nav order">
-				<li><a class="orderby" href="">최신등록순</a></li>
-				<li><a class="orderby" href="">낮은가격순</a></li>
-				<li><a class="orderby" href="">높은가격순</a></li>
+				<li><button class = "orderbyBtn" aria-pressed="false" value = "pDate">최신등록순</button></li>
+				<li><button class = "orderbyBtn" aria-pressed="false" value = "pPrice">낮은가격순</button></li>
+				<li><button class = "orderbyBtn" aria-pressed="false" value = "pPrice desc">높은가격순</button></li>
 			</ul>
 		</div>
 		<!-- 상품 리스트 -->
