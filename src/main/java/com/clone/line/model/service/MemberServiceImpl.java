@@ -28,9 +28,15 @@ public class MemberServiceImpl implements MemberService {
 	public void join(Member member) throws Exception {
 		sqlSession.getMapper(MemberMapper.class).join(member);
 	}
-
+  
+	// restful
 	@Override
-	public Set<String> interest(String userId) throws Exception {
-		return sqlSession.getMapper(MemberMapper.class).interest(userId);
+	public int isExist(String userId) {
+		return sqlSession.getMapper(MemberMapper.class).isExist(userId);
 	}
+  
+  @Override
+  public Set<String> interest(String userId) throws Exception {
+		return sqlSession.getMapper(MemberMapper.class).interest(userId);
+  }
 }

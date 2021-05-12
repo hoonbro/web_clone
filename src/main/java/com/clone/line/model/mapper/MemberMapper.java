@@ -11,5 +11,8 @@ public interface MemberMapper {
 	
 	public void join(Member member) throws SQLException;
 	
-	public Set<String> interest(String userId) throws Exception;
+	// restful
+	public int isExist(String userId);
+  
+  public Set<String> interest(String userId) throws Exception;
 }

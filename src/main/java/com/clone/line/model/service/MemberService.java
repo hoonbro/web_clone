@@ -11,5 +11,9 @@ public interface MemberService {
 	
 	public void join(Member member) throws Exception;
 	
-	public Set<String> interest(String userId) throws Exception;
+	// restful
+	public int isExist(String userId);
+  
+  public Set<String> interest(String userId) throws Exception;
+
 }
