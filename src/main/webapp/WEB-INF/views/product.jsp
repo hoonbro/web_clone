@@ -110,7 +110,7 @@
 				<div class = "row">
 					<div class = "col-sm-12 border border-top-0 border-right-0 border-left-0">
 						<div class = "leftimgdiv1 d-flex justify-content-center">	
-							<img class = "leftimg1" src = "https://shop-phinf.pstatic.net/20210415_168/1618480728230sFKpE_JPEG/19329562_59904539.jpg?type=m510"/>
+							<img class = "leftimg1" src = "${productDetail.thumbnail}"/>
 						</div>
 					</div>	
 				</div>
@@ -151,7 +151,7 @@
 				<div class = "row mt-2">
 					<div class = "col-sm-1"></div> <!--  공백 --> 
 					<div class = "col-sm-10">
-						<strong  class="st3">25000원</strong>
+						<strong  class="st3">${productDetail.pPrice}원</strong>
 					</div>
 					<div class = "col-sm-1"></div> <!--  공백 --> 
 				</div>
@@ -233,69 +233,61 @@
 								</div>
 							</div>
 							<div class = "col-sm-3">
-							<strong id="price1">25000</strong><span>원</span>
+							<strong id="price1">${productDetail.pPrice}</strong><span>원</span>
 							</div>
 						</div>
 						<hr>
 						 <button type="button" class="btn btn-success btn-lg btn-block sp5">구매하기</button>
 					</div>
 					<div class="col-sm-1"></div>
-				</div>
-				
-					
-					
-					
-					
-					
-					
-					
-					
-					
-				
+				</div>	
 			</div>
-						
-			
-			
+		
 		</div>
 	</div>
 	<div class = "space"></div>
-	<div class = "container mt-4">
-		
-	
+	<div class = "container mt-4">	
 		<div class = "row">
-				<strong class = "mb-4">상품정보</strong>
-	 <table class="table table-bordered">
-	 	<colgroup>
-	 	<col style = "width:10%">
-	 	<col style = "width:20%">
-	 	<col style = "width:10%">
-	 	<col style = "width:20%">
-	 	</colgroup>
-	      <tr class ="sp1">
-	        <td class="tdcolor">상품번호</td>
-	        <th>5527228495</th>
-	        <td class="tdcolor">상품상태</td>
-	        <td>신상품</td>
-	      </tr>
-	      <tr class ="sp1">
-	        <td class="tdcolor">제조사</td>
-	        <td>라인프렌즈</td>
-	        <td class="tdcolor">브랜드</td>
-	        <td>라인프렌즈</td>
-	      </tr>
-	      <tr class ="sp1">
-	        <td class="tdcolor">모델명</td>
-	        <td>8809592543962</td>
-	        <td class="tdcolor">원산지</td>
-	        <td>중국</td>
-	      </tr>
-	      <tr class ="sp1">
-	        <td class="tdcolor">제조일자</td>
-	        <td colspan="3">2021.04.01.</td>
-	      </tr>
-  </table>
+			 <strong class = "mb-4">상품정보</strong>
+			 <table class="table table-bordered">
+			 	<colgroup>
+			 	<col style = "width:10%">
+			 	<col style = "width:20%">
+			 	<col style = "width:10%">
+			 	<col style = "width:20%">
+			 	</colgroup>
+			      <tr class ="sp1">
+			        <td class="tdcolor">상품번호</td>
+			        <th>${productDetail.pNum}</th>
+			        <td class="tdcolor">상품상태</td>
+			        <td>신상품</td>
+			      </tr>
+			      <tr class ="sp1">
+			        <td class="tdcolor">제조사</td>
+			        <td>${productDetail.pCorp}</td>
+			        <td class="tdcolor">브랜드</td>
+			        <td>${productDetail.pBrand}</td>
+			      </tr>
+			      <tr class ="sp1">
+			        <td class="tdcolor">모델명</td>
+			        <td>${productDetail.pModel}</td>
+			        <td class="tdcolor">원산지</td>
+			        <td>${productDetail.pOrigin}</td>
+			      </tr>
+			      <tr class ="sp1">
+			        <td class="tdcolor">제조일자</td>
+			        <td colspan="3">${productDetail.pMdate}</td>
+			      </tr>
+		  </table>
 		</div>
-	
+		
+		
+		<div class="row">
+			<h2>${productDetail.detail}</h2>
+			<img src = "https://blogfiles.pstatic.net/MjAyMTA1MTJfODMg/MDAxNjIwODI5MjY3MzUx.OkBDTpmtFgnqw8mSX8E-lYLMt5HGp6zxttDlotzFlo4g.svLKiJU403BrfEPU9IePc6LIsvvDJc0byZc59HiAMagg.JPEG.audwns101/01.jpg"/>
+		</div>
+		
+		
 	</div>
 	
 

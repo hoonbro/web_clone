@@ -53,7 +53,8 @@
 			<c:forEach var = "item" items = "${list }">
 				<li>
 				<div class=product>
-					<a href="${root }/product/detail?pNum = ${item.pNum}"> <img
+				
+					<a href="${root }/product/detail?pNum=${item.pNum}"> <img
 						src="${item.pUrl }">
 						<div class="productname">
 							<strong>${item.pName }</strong><br> <strong>${item.pPrice}원</strong>

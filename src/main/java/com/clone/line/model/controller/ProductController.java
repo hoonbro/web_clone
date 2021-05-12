@@ -6,9 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.clone.line.model.Product;
+import com.clone.line.model.ProductDetail;
 import com.clone.line.model.service.ProductService;
 
 @Controller
@@ -31,7 +34,17 @@ public class ProductController {
 	}
 	
 	@GetMapping("/detail")
-	public String detail() {
-		return "product";
+	public String detail(String pNum,Model model) {
+		try {
+			ProductDetail productDetail = productService.getProductInfo(pNum);
+			System.out.println(productDetail.getThumbnail());
+			System.out.println(productDetail.getDetail());
+			model.addAttribute("productDetail",productDetail);
+			return "product";
+		}
+		catch (Exception e) {
+			System.out.println("상세정보 조회 중 오류 발생");
+			return "list";
+		}
 	}
 }
