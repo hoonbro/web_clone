@@ -1,6 +1,8 @@
 package com.clone.line.model.controller;
 
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
@@ -31,11 +33,12 @@ public class MemberController {
 	
 	@PostMapping("/login")
 	public String login(@RequestParam Map<String, String> map, Model model, HttpSession session, HttpServletResponse response) {
+		String userId = null;
 		try {
 			Member member = memberService.login(map);
 			if (member != null) {
 				session.setAttribute("userInfo", member);
-				
+				userId = member.getUserId();
 				Cookie cookie = new Cookie("saveId", member.getUserId());
 				cookie.setPath("/");
 				if("saveok".equals(map.get("save"))) {
@@ -51,6 +54,12 @@ public class MemberController {
 			}
 		} catch (Exception e) {
 			model.addAttribute("msg", "로그인 중 문제가 발생했습니다.");
+			return "login";
+		}
+		try {
+			Set<String> set = memberService.interest(userId);
+		}catch (Exception e) {
+			model.addAttribute("msg", "찜목록 불러오기 중 문제가 발생했습니다.");
 			return "login";
 		}
 		return "index";

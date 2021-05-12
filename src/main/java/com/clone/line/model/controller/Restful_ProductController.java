@@ -23,14 +23,21 @@ public class Restful_ProductController {
 	
 	@GetMapping("/orderby/{data}")
 	public ResponseEntity<List<Product>> orderby(@PathVariable String data) {
-		System.out.println(data);
 		List<Product> plist = productService.orderby(data);
 		if(plist != null) {
-			System.out.println(plist.size());
-			for(Product p : plist) {
-				System.out.println(p.toString());
-			}
 			return new ResponseEntity<List<Product>>(plist, HttpStatus.OK);
+		}
+		else
+			return new ResponseEntity(HttpStatus.NO_CONTENT);
+	}
+	
+	@GetMapping("/like/{pNum}")
+	public ResponseEntity<Integer> like(@PathVariable String pNum) {
+		productService.setLike(pNum);
+		int isLike = 0;
+		isLike = productService.getLike(pNum);
+		if(isLike != 0) {
+			return new ResponseEntity<Integer>(isLike, HttpStatus.OK);
 		}
 		else
 			return new ResponseEntity(HttpStatus.NO_CONTENT);

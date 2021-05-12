@@ -7,6 +7,7 @@ public class Product {
 	private String pUrl;
 	private int pTotal;
 	private String pDate;
+	
 	public String getpNum() {
 		return pNum;
 	}

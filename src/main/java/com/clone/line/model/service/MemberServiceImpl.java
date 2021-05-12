@@ -1,6 +1,7 @@
 package com.clone.line.model.service;
 
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,10 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public void join(Member member) throws Exception {
 		sqlSession.getMapper(MemberMapper.class).join(member);
+	}
+
+	@Override
+	public Set<String> interest(String userId) throws Exception {
+		return sqlSession.getMapper(MemberMapper.class).interest(userId);
 	}
 }

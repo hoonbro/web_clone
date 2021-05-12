@@ -15,4 +15,9 @@
 		values (#{userId}, #{userPwd}, #{userName}, #{userEmail}, #{userAddress})
 	</insert>
 	
+	<select id = "interest" parameterType="String" resultType="String">
+		select pNum
+		from interest
+		where id = #{userId};
+	</select>
 </mapper>

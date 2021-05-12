@@ -10,4 +10,8 @@ public interface ProductService {
 	
 	//restful
 	public List<Product> orderby(String data);
+	
+	public void setLike(String pNum);
+	
+	public int getLike(String pNum);
 }
