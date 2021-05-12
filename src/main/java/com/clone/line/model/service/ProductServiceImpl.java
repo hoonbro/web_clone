@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.clone.line.model.Product;
+import com.clone.line.model.ProductDetail;
 import com.clone.line.model.mapper.ProductMapper;
 
 @Service
@@ -27,6 +28,12 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
+	public ProductDetail getProductInfo(String pNum) throws SQLException {
+
+		return sqlSession.getMapper(ProductMapper.class).getProductInfo(pNum);
+  }
+  
+  @Override
 	public void setLike(String pNum) {
 		sqlSession.getMapper(ProductMapper.class).setLike(pNum);
 	}
