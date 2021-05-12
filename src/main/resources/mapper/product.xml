@@ -5,19 +5,24 @@
 <mapper namespace="com.clone.line.model.mapper.ProductMapper">
 	<select id="getList" resultType="product">
 		select * from product
-	</select>	
-	
+	</select>
+
 	<select id="orderby" parameterType="String" resultType="product">
 		select * from product
-		order by pPrice
+		<trim prefix="ORDER BY">
+			<if test="data == 'pPrice'"> pPrice </if>
+			<if test="data == 'pPrice_desc'"> pPrice desc </if>
+			<if test="data == 'pDate'"> pDate </if>
+		</trim>
 	</select>
 	
+
 	<select id="getProductInfo" parameterType="String" resultType="ProductDetail">
 		select p1.pModel, p1.pNum, p1.pStatus, p1.pCorp, p1.pBrand, p1.pOrigin, p1.pMdate, p1.thumbnail,p1.detail,p2.pPrice
 		from productmade p1 , product p2
 		where p1.pNum = #{pNum} and p2.pNum = #{pNum}
-		;
 	</select>
 </mapper>
+
 
 

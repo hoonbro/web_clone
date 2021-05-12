@@ -24,7 +24,6 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public List<Product> orderby(String data) {
-		System.out.println(data);
 		return sqlSession.getMapper(ProductMapper.class).orderby(data);
 	}
 
@@ -32,6 +31,15 @@ public class ProductServiceImpl implements ProductService {
 	public ProductDetail getProductInfo(String pNum) throws SQLException {
 
 		return sqlSession.getMapper(ProductMapper.class).getProductInfo(pNum);
-//		return sqlSession.getMapper(ProductMapper.class).getProductInfo(pNum);
+  }
+  
+  @Override
+	public void setLike(String pNum) {
+		sqlSession.getMapper(ProductMapper.class).setLike(pNum);
+	}
+
+	@Override
+	public int getLike(String pNum) {
+		return sqlSession.getMapper(ProductMapper.class).getLike(pNum);
 	}
 }

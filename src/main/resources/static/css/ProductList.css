@@ -29,6 +29,11 @@
 	background-color: white;
 }
 
+.orderbyIcon{
+	font-size : 13px;
+	color: black;
+}
+
 .order li {
 	float: left;
 	margin-left: 10px;

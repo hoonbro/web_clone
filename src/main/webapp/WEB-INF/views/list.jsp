@@ -43,9 +43,18 @@
 		<!-- 정렬 -->
 		<div class="mt-3 mb-3">
 			<ul class="nav order">
-				<li><button class = "orderbyBtn" aria-pressed="false" value = "pDate">최신등록순</button></li>
-				<li><button class = "orderbyBtn" aria-pressed="false" value = "pPrice">낮은가격순</button></li>
-				<li><button class = "orderbyBtn" aria-pressed="false" value = "pPrice desc">높은가격순</button></li>
+				<li>
+					<i id = "pDate_icon" class="orderbyIcon fas fa-check" style = "display: none"></i>
+					<button id = "pDate" class = "orderbyBtn" aria-pressed="false" value = "pDate">최신등록순</button>
+				</li>
+				<li>
+					<i id = "pPrice_icon" class="orderbyIcon fas fa-check" style = "display: none"></i>
+					<button id = "pPrice" class = "orderbyBtn" aria-pressed="false" value = "pPrice">낮은가격순</button>
+				</li>
+				<li>
+					<i id = "pPrice_desc_icon" class="orderbyIcon fas fa-check" style = "display: none"></i>
+					<button id = "pPrice_desc"class = "orderbyBtn" aria-pressed="false" value = "pPrice_desc">높은가격순</button>
+				</li>
 			</ul>
 		</div>
 		<!-- 상품 리스트 -->
@@ -53,7 +62,7 @@
 			<c:forEach var = "item" items = "${list }">
 				<li>
 				<div class=product>
-				
+
 					<a href="${root }/product/detail?pNum=${item.pNum}"> <img
 						src="${item.pUrl }">
 						<div class="productname">
@@ -61,12 +70,12 @@
 						</div>
 					</a>
 					<div class="hide_btn d-flex justify-content-center">
-						<button type="button" class="like_img_btn" aria-pressed="false">
+						<button type="button" likeId = "like_${item.pNum}" class="like_${item.pNum} like_${item.pNum}_img_btn like_btns like_img_btn" aria-pressed="false">
 							<i class="hide_icon far fa-heart"></i>
 						</button>
 					</div>
 					<div class="like">
-						<button type="button" class="like_btn" aria-pressed="false">
+						<button type="button" likeId = "like_${item.pNum}" class="like_${item.pNum} like_${item.pNum}_btn like_btns like_btn" aria-pressed="false">
 							<i class="far fa-heart"></i>
 						</button>
 					</div>
