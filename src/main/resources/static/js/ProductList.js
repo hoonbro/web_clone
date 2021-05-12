@@ -78,7 +78,7 @@ function makeList(products){
 		let str = `
 		<li>
 		<div class=product>
-			<a href="/product/detail?pNum =  ${item.pNum}"> <img
+			<a href="/product/detail?pNum=${item.pNum}"> <img
 				src="${item.pUrl}">
 				<div class="productname">
 					<strong>${item.pName}</strong><br> <strong>${item.pPrice}원</strong>

@@ -47,7 +47,6 @@ public class MemberController {
 					cookie.setMaxAge(0);
 				}
 				response.addCookie(cookie);
-				return "index";
 			}
 			else {
 				model.addAttribute("msg", "가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.");
@@ -58,12 +57,10 @@ public class MemberController {
 			return "login";
 		}
 
-		try {
-			Set<String> set = memberService.interest(userId);
-		}catch (Exception e) {
-			model.addAttribute("msg", "찜목록 불러오기 중 문제가 발생했습니다.");
-			return "login";
-		}
+		/*
+		 * try { Set<String> set = memberService.interest(userId); }catch (Exception e)
+		 * { model.addAttribute("msg", "찜목록 불러오기 중 문제가 발생했습니다."); return "login"; }
+		 */
 		return "index";
 	}
 	
