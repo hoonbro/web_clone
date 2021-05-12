@@ -9,6 +9,6 @@
 	
 	<select id="orderby" parameterType="String" resultType="product">
 		select * from product
-		order by #{data}
+		order by pPrice
 	</select>
 </mapper>

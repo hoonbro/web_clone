@@ -25,7 +25,7 @@
 			<li data-target="#demo" data-slide-to="1" class="active"></li>
 			<li data-target="#demo" data-slide-to="2" class=""></li>
 		</ul>
-	<div class="carousel-inner">
+	<div class="carousel-inner text-center">
 			<div class="carousel-item">
 				<img
 					src="https://shop-phinf.pstatic.net/20210413_32/1618277956569uyIfN_JPEG/main_pc_bn_wadiz2.jpg"
