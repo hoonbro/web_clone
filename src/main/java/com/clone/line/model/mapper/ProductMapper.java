@@ -10,4 +10,8 @@ public interface ProductMapper {
 	
 	//restful
 	public List<Product> orderby(String data);
+	
+	public void setLike(String data);
+	
+	public int getLike(String data);
 }

@@ -15,10 +15,16 @@
 		values (#{userId}, #{userPwd}, #{userName}, #{userEmail})
 	</insert>
 	
+
+	<select id = "interest" parameterType="String" resultType="String">
+		select pNum
+		from interest
+		where id = #{userId};
+	</select>
+
 	<select id="isExist" parameterType="String" resultType="int">
 		select count(*)
 		from member
 		where userid = #{userId}
 	</select>
-	
 </mapper>

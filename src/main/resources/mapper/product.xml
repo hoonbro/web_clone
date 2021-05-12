@@ -5,10 +5,15 @@
 <mapper namespace="com.clone.line.model.mapper.ProductMapper">
 	<select id="getList" resultType="product">
 		select * from product
-	</select>	
-	
+	</select>
+
 	<select id="orderby" parameterType="String" resultType="product">
 		select * from product
-		order by pPrice
+		<trim prefix="ORDER BY">
+			<if test="data == 'pPrice'"> pPrice </if>
+			<if test="data == 'pPrice_desc'"> pPrice desc </if>
+			<if test="data == 'pDate'"> pDate </if>
+		</trim>
 	</select>
+	
 </mapper>
