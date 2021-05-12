@@ -31,7 +31,7 @@
 	</div>
 	<div style="height:80px"></div>
 	<div id="logo">
-		<a href="#" id="login_logo">NAVER</a>
+		<a href="/" id="login_logo">NAVER</a>
 	</div>
 </header>
 <section>

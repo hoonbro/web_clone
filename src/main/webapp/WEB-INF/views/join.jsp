@@ -12,7 +12,7 @@
 <header>
 	<div style="height:40px"></div>
 	<div id="logo">
-		<a href="#" id="login_logo">NAVER</a>
+		<a href="/" id="login_logo">NAVER</a>
 	</div>
 </header>
 <section>
