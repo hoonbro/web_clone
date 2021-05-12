@@ -5,7 +5,6 @@ public class Member {
 	private String userPwd;
 	private String userName;
 	private String userEmail;
-	private String userAddress;
 	public String getUserId() {
 		return userId;
 	}
@@ -30,12 +29,4 @@ public class Member {
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
-	public String getUserAddress() {
-		return userAddress;
-	}
-	public void setUserAddress(String userAddress) {
-		this.userAddress = userAddress;
-	}
-	
-	
 }

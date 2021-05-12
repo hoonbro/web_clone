@@ -9,4 +9,7 @@ public interface MemberMapper {
 	public Member login(Map<String, String> map) throws SQLException;
 	
 	public void join(Member member) throws SQLException;
+	
+	// restful
+	public int isExist(String userId);
 }
