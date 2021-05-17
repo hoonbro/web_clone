@@ -11,9 +11,9 @@
 <script type="text/javascript">
 	$(function() {
 		$("#userId").blur(function() {
+			const idReg = /^[A-Za-z]+[A-Za-z0-9_-]{5,20}$/;
 			var userId = $("#userId").val();
-			var idReg = /[a-z0-9_-]{5,20}/g;
-			console.log(userId);
+			
 			if (userId == '') {
 				$("#idCheck").text("필수 정보입니다.");
 			} else if (!idReg.test(userId)) {
@@ -37,16 +37,43 @@
 		});
 		
 		$("#userPwd").blur(function() {
-			if ($("#userPwd").val() == '') {
+			const check1 = /[0-9]/;
+			const check2 = /[A-Za-z]/;
+			const check3 = /[!@#$%^&*]/;
+			
+			var userPwd = $("#userPwd").val();
+			
+			if (userPwd == '') {
 				$("#pwdCheck").text("필수 정보입니다.");
+			} else if (!check1.test(userPwd) || !check2.test(userPwd) || !check3.test(userPwd)) {
+				$("#pwdCheck").text("8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.");
+			} else {
+				$("#pwdCheck").empty();
 			}
 		});
 		
 		$("#userRePwd").blur(function() {
-			if ($("#userRePwd").val() == $("#userPwd").val()) {
-				$("#pwdCheck").text("일");
+			console.log($("#userRePwd").val());
+			console.log($("#userPwd").val());
+			
+			if ($("#userRePwd").val() != $("#userPwd").val()) {
+				$("#repwdCheck").text("비밀번호가 일치하지 않습니다.");
+			} else {
+				$("#repwdCheck").empty();
 			}
 		});
+		
+		/* 생년월일부터 다시 시작
+		$("#userRePwd").blur(function() {
+			console.log($("#userRePwd").val());
+			console.log($("#userPwd").val());
+			
+			if ($("#userRePwd").val() != $("#userPwd").val()) {
+				$("#repwdCheck").text("비밀번호가 일치하지 않습니다.");
+			} else {
+				$("#repwdCheck").empty();
+			}
+		}); */
 	});
 </script>
 </head>
