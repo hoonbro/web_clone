@@ -20,7 +20,6 @@ public class Restful_MemberController {
 	
 	@GetMapping("/join/{userId}")
 	public ResponseEntity<Boolean> checkId(@PathVariable String userId) {
-		System.out.println(userId);
 		int isExist = memberService.isExist(userId);
 		if(isExist == 0) {
 			return new ResponseEntity<Boolean>(false, HttpStatus.OK);
