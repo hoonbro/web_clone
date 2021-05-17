@@ -26,21 +26,21 @@
 			<div class="p-2">
 				<div class="smalldiv1">
 					<img class="smallimg1"
-						src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEyMDJfMTYx%2FMDAxNjA2ODk2MTYxOTE0.-79SjEgDQprxsz2dXXhK6VnO22kSpt2nSyOxOgb2Zmog.Bu-xtPfQiV3gES2PlmTYsf0LFoXCXzZLAkJ6Uj2Bqr0g.JPEG.yh164950%2Fnaver_com_20201202_165758.jpg&type=sc960_832" />
+						src="/img/icon1.jpg" />
 
 				</div>
 				<div class="smalldiv1">
 					<img class="smallimg1"
-						src="https://ww.namu.la/s/050ba5bd9b5ecdbd5c4ae8e9f4aa28526aba9d3ccbd3f6354086f5a5cc3d77a99da495a132dfb97c139426f83cc93e9861bc212945ba6c3ad8f5e51bf06662351aa1d0957537621831c3ce73070e4b85c50dc1df44a1811415f6b16484a6504c" />
+						src="/img/icon2.jpg" />
 				</div>
 				<div class="smalldiv1">
 					<img class="smallimg1"
-						src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEyMDJfMTYx%2FMDAxNjA2ODk2MTYxOTE0.-79SjEgDQprxsz2dXXhK6VnO22kSpt2nSyOxOgb2Zmog.Bu-xtPfQiV3gES2PlmTYsf0LFoXCXzZLAkJ6Uj2Bqr0g.JPEG.yh164950%2Fnaver_com_20201202_165758.jpg&type=sc960_832" />
+						src="/img/icon3.jpg" />
 
 				</div>
 				<div class="smalldiv1">
 					<img class="smallimg1"
-						src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEyMDJfMTYx%2FMDAxNjA2ODk2MTYxOTE0.-79SjEgDQprxsz2dXXhK6VnO22kSpt2nSyOxOgb2Zmog.Bu-xtPfQiV3gES2PlmTYsf0LFoXCXzZLAkJ6Uj2Bqr0g.JPEG.yh164950%2Fnaver_com_20201202_165758.jpg&type=sc960_832" />
+						src="/img/icon4.jpg" />
 
 				</div>
 
@@ -169,7 +169,7 @@
 						<div class = "row">
 							<div class = "col-sm-12 minidiv2 border border-top-0 border-right-0 border-left-0">
 								<div class = "mt-3">
-									<strong>라인프렌즈 고객을 위한 혜택</strong>
+									<strong>${userInfo.userName}님만을 위한 혜택</strong>
 								</div>
 							</div>
 						</div>
@@ -196,11 +196,11 @@
 						
 						<div class = "rightdiv3 mt-3 border">
 							<div class = "row mt-1">
-								<div class ="col-sm-8">
-									<span class = "sp4">&nbsp;&nbsp; TIP.포인트 더 받는 방법</span>
+								<div class ="col-sm-9">
+									<span class = "sp6">&nbsp;&nbsp;<em>TIP.</em></span> <span class="sp4">포인트 더 받는 방법</span>
 								</div>		
-								<div class ="col-sm-4">
-									<strong>+최대 1,500</strong><span class = "sp4">원</span>
+								<div class ="col-sm-3">
+									<strong class="sp4">+최대 1,500</strong><span class = "sp4">원</span>
 								</div>	
 							</div>
 						</div>
@@ -229,10 +229,32 @@
 							</div>
 						</div>
 						<hr>
+						<div class="row mt-3">
+							<div class="col-sm-3">
+								<strong class="sp4">총 상품 금액</strong>
+							</div>
+							<div class="col-sm-3">
+								
+							</div>
+							<div class="col-sm-3">
+								<span id="prod_cnt2"> </span>  <!-- 수량들어갈 자리 -->
+							</div>
+							<div class="col-sm-3">
+								<span id="price2"></span>
+							</div>
+						</div>
+								
+						
+						
+						<hr>
 						 <button type="button" class="btn btn-success btn-lg btn-block sp5">구매하기</button>
 					</div>
 					<div class="col-sm-1"></div>
-				</div>	
+				</div>
+				
+				
+				
+					
 			</div>
 		
 		</div>

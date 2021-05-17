@@ -11,6 +11,12 @@ $(function() {
 			price1 = Number($('#price1').text()) + Number($('#price1').text()) / (cnt-1);
 			$('#price1').empty();
 			$('#price1').append(price1);
+			
+			$('#prod_cnt2').empty();
+			$('#prod_cnt2').append("총 수량").append(cnt).append("개 | ");
+			
+			$('#price2').empty();
+			$('#price2').append(price1).append("원");
 		});
 		
 		$('#minusbtn').on('click',function() {
@@ -23,6 +29,10 @@ $(function() {
 				price1 = Number($('#price1').text()) - Number($('#price1').text()) / (cnt+1);
 				$('#price1').empty();
 				$('#price1').append(price1);
+				$('#prod_cnt2').empty();
+				$('#prod_cnt2').append("총 수량").append(cnt).append("개  | ");
+				$('#price2').empty();
+				$('#price2').append(price1).append("원");
 			}
 			
 		});
