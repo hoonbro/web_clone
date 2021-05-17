@@ -19,7 +19,7 @@
 	<select id = "interest" parameterType="String" resultType="String">
 		select pNum
 		from interest
-		where id = #{userId};
+		where userId = #{userId};
 	</select>
 
 	<select id="isExist" parameterType="String" resultType="int">
