@@ -273,11 +273,9 @@
 		  </table>
 		</div>
 		
-		
-		<div class="row">
-			<h2>${productDetail.detail}</h2>
-			<img src = "https://blogfiles.pstatic.net/MjAyMTA1MTJfODMg/MDAxNjIwODI5MjY3MzUx.OkBDTpmtFgnqw8mSX8E-lYLMt5HGp6zxttDlotzFlo4g.svLKiJU403BrfEPU9IePc6LIsvvDJc0byZc59HiAMagg.JPEG.audwns101/01.jpg"/>
-		</div>
+			<div class="d-flex justify-content-center mb-3">
+				<img src = "/img/${productDetail.pNum}.jpg">
+			</div>
 		
 		
 	</div>
