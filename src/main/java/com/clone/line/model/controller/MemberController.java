@@ -22,7 +22,7 @@ import com.clone.line.model.service.MemberService;
 @Controller
 @RequestMapping("/member")
 public class MemberController {
-	
+
 	@Autowired
 	private MemberService memberService;
 
@@ -30,7 +30,7 @@ public class MemberController {
 	public String login() {
 		return "login";
 	}
-	
+
 	@PostMapping("/login")
 	public String login(@RequestParam Map<String, String> map, Model model, HttpSession session, HttpServletResponse response) {
 		String userId = null;
@@ -41,14 +41,13 @@ public class MemberController {
 				userId = member.getUserId();
 				Cookie cookie = new Cookie("saveId", member.getUserId());
 				cookie.setPath("/");
-				if("saveok".equals(map.get("save"))) {
+				if ("saveok".equals(map.get("save"))) {
 					cookie.setMaxAge(60 * 60 * 24);
 				} else {
 					cookie.setMaxAge(0);
 				}
 				response.addCookie(cookie);
-			}
-			else {
+			} else {
 				model.addAttribute("msg", "가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.");
 				return "login";
 			}
@@ -57,24 +56,28 @@ public class MemberController {
 			return "login";
 		}
 
-		/*
-		 * try { Set<String> set = memberService.interest(userId); }catch (Exception e)
-		 * { model.addAttribute("msg", "찜목록 불러오기 중 문제가 발생했습니다."); return "login"; }
-		 */
+		try {
+			Set<String> set = memberService.interest(userId);
+			session.setAttribute("likeSet", set);
+		} catch (Exception e) {
+			model.addAttribute("msg", "찜목록 불러오기 중 문제가 발생했습니다.");
+			return "login";
+		}
+
 		return "index";
 	}
-	
+
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "login";
 	}
-	
+
 	@GetMapping("join")
 	public String join() {
 		return "join";
 	}
-	
+
 	@PostMapping("/join")
 	public String join(Member member, Model model) {
 		try {

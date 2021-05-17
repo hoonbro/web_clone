@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +17,50 @@
 
 <link rel="stylesheet" href="/css/ProductList.css">
 <script src = "/js/ProductList.js"></script>
+<script>
+function makeList(products){
+	$('#productlist').empty();
+	$(products).each(function (index, item){
+		let str = `
+		<li>
+		<div class=product>
+			<a href="/product/detail?pNum=${'${item.pNum}'}"> <img
+				src="${'${item.pUrl}'}">
+				<div class="productname">
+					<strong>${'${item.pName}'}</strong><br> <strong>${'${item.pPrice}'}원</strong>
+				</div>
+			</a>
+			<c:if test = "${likeSet.contains('${item.pNum}')}">
+				<div class="hide_btn d-flex justify-content-center">
+					<button type="button" likeId = "like_${'${item.pNum}'}" class="like_${'${item.pNum}'} like_${'${item.pNum}'}_img_btn like_btns like_img_btn" aria-pressed="true">
+						<i class="hide_icon far fa-heart"></i>
+					</button>
+				</div>
+				<div class="like">
+					<button type="button" likeId = "like_${'${item.pNum}'}" class="like_${'${item.pNum}'} like_${'${item.pNum}'}_btn like_btns like_btn" aria-pressed="true">
+						<i class="far fa-heart"></i>
+					</button>
+				</div>
+			</c:if>
+			<c:if test = "${!likeSet.contains('${item.pNum}')}">
+				<div class="hide_btn d-flex justify-content-center">
+					<button type="button" likeId = "like_${'${item.pNum}'}" class="like_${'${item.pNum}'} like_${'${item.pNum}'}_img_btn like_btns like_img_btn" aria-pressed="false">
+						<i class="hide_icon far fa-heart"></i>
+					</button>
+				</div>
+				<div class="like">
+					<button type="button" likeId = "like_${'${item.pNum}'}" class="like_${'${item.pNum}'} like_${'${item.pNum}'}_btn like_btns like_btn" aria-pressed="false">
+						<i class="far fa-heart"></i>
+					</button>
+				</div>
+			</c:if>
+		</div>
+		</li>
+		`;
+		$('#productlist').append(str);
+	});
+}
+</script>
 <title>Insert title here</title>
 </head>
 <body style="width: 1400px; margin: 0 auto">
@@ -69,6 +114,19 @@
 							<strong>${item.pName }</strong><br> <strong>${item.pPrice}원</strong>
 						</div>
 					</a>
+					<c:if test="${likeSet.contains(item.pNum)}">
+					<div class="hide_btn d-flex justify-content-center">
+						<button type="button" likeId = "like_${item.pNum}" class="like_${item.pNum} like_${item.pNum}_img_btn like_btns like_img_btn" aria-pressed="true">
+							<i class="hide_icon far fa-heart"></i>
+						</button>
+					</div>
+					<div class="like">
+						<button type="button" likeId = "like_${item.pNum}" class="like_${item.pNum} like_${item.pNum}_btn like_btns like_btn" aria-pressed="true">
+							<i class="far fa-heart"></i>
+						</button>
+					</div>
+					</c:if>
+					<c:if test="${!likeSet.contains(item.pNum)}">
 					<div class="hide_btn d-flex justify-content-center">
 						<button type="button" likeId = "like_${item.pNum}" class="like_${item.pNum} like_${item.pNum}_img_btn like_btns like_img_btn" aria-pressed="false">
 							<i class="hide_icon far fa-heart"></i>
@@ -79,6 +137,7 @@
 							<i class="far fa-heart"></i>
 						</button>
 					</div>
+					</c:if>
 				</div>
 			</li>
 			</c:forEach>
