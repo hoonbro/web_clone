@@ -18,8 +18,6 @@ public interface ProductMapper {
 	
 	public void setLike(Member member);
 	
-	public int getLike(String data);
-	
 	public int getTotalCount(SearchCondition condition);
 	
 	public List<Product> search(SearchCondition condition);

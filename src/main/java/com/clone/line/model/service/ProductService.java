@@ -17,8 +17,6 @@ public interface ProductService {
 	
 	public ProductDetail getProductInfo(String pNum) throws SQLException;
 	
-	public int getLike(String pNum);
-	
 	public Map<String, Object> pagingSearch(SearchCondition condition);
 
 	public void setLike(Member member);
