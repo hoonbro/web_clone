@@ -26,7 +26,7 @@ public class PageNavigation {
 	private int countPerPage;
 	
 	/** 한 페이지에 보여줄 아이템의 개수이다.*/
-	int itemPerPage = 10;
+	int itemPerPage = 20;
 	
 	/** 한 화면에 만들 navigation link 의 최대 개수를 설정한다.*/
 	int maxDisplayNavCnt = 10;

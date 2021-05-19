@@ -208,7 +208,7 @@ function makePageNav(nav) {
 		`;
 	}
 	
-	for (let i=nav.startPage; i<nav.endPage; i++) {
+	for (let i=nav.startPage; i<=nav.endPage; i++) {
 		if (nav.currentPage == i) {
 			str += `
 				<li class="page-item active" data-page=`+i+`>
