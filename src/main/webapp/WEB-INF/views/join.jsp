@@ -11,7 +11,7 @@
 <script type="text/javascript">
 	$(function() {
 		$("#userId").blur(function() {
-			const idReg = /^[A-Za-z]+[A-Za-z0-9_-]{5,20}$/;
+			const idReg = /^[A-Za-z]+[A-Za-z0-9_-]{4,19}$/;
 			var userId = $("#userId").val();
 			
 			if (userId == '') {

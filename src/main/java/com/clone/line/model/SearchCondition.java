@@ -5,7 +5,16 @@ public class SearchCondition {
 	private int pg = 1;
 	private int spp = 20;
 	private int start;
+	private String data;
 	
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	public String getWord() {
 		return word;
 	}
