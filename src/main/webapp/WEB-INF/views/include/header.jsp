@@ -37,9 +37,9 @@
 	<div class="container text-center mt-5">
 		<a href="/"><img alt=""
 			src="https://shop-phinf.pstatic.net/20200504_93/1588582588622OE2qc_PNG/main_logo_b.png"></a>
-		<form class="justify-content-end form-inline my-2 my-lg-0">
-			<input class="form-control mr-sm-2" type="text" placeholder="Search">
-			<button class="btn btn-success my-2 my-sm-0" type="button">Search</button>
+		<form class="justify-content-end form-inline my-2 my-lg-0" action="/product/list" method="get">
+			<input class="form-control mr-sm-2" type="text" id="word" name="word" value="${sword}">
+			<button class="btn btn-success my-2 my-sm-0" type="submit" id="searchBtn">검색</button>
 		</form>
 	</div>
 	<nav class="navbar navbar-expand">

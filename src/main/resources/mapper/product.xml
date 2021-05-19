@@ -4,7 +4,8 @@
 
 <mapper namespace="com.clone.line.model.mapper.ProductMapper">
 	<select id="getList" resultType="product">
-		select * from product
+		select * 
+		from product
 	</select>
 
 	<select id="orderby" parameterType="String" resultType="product">
@@ -22,7 +23,22 @@
 		from productmade p1 , product p2
 		where p1.pNum = #{pNum} and p2.pNum = #{pNum}
 	</select>
+	
+	<!-- 페이징 -->
+	<select id="search" parameterType="SearchCondition" resultType="product">
+		select pNum, pName, pPrice, pUrl, pTotal, pDate
+		from product
+		<if test="word != null and word != ''">
+			where pName like #{word}
+		</if>
+		limit #{start}, #{spp}
+	</select>
+	
+	<select id="getTotalCount" parameterType="SearchCondition" resultType="int">
+		select count(pNum)
+		from product
+		<if test="word != null and word != ''">
+			where pName like #{word}
+		</if>
+	</select>
 </mapper>
-
-
-
