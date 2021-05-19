@@ -1,65 +1,37 @@
-$(document).ready(function() {
-	$(document).on('click', ".like_btns", function() {
-		let id = $(this).attr('likeId');
-		if($(this).attr('aria-pressed') === 'false'){
-			$("." + id).attr('aria-pressed', 'true');
-			$("." + id).css('color', '#FF4500');
-			$("." + id + "_img_btn").css('color', 'white');
-			$("." + id + "_img_btn").css('background-color', '#FF4500');
-		}else {
-			$("." + id).attr('aria-pressed', 'false');
-			$("." + id).css('color', 'gray');
-			$("." + id + "_img_btn").css('background-color', 'white');
-		}
-		
-		
-/*		if ($("." + id).attr('aria-pressed') === 'false') {
-			$("." + id).attr('aria-pressed', 'true');
-			$("." + id).css('color', '#FF4500');
-			$("." + id + "_img_btn").css('color', 'white');
-			$("." + id + "_img_btn").css('background-color', '#FF4500');
-		} else {
-			$("." + id).attr('aria-pressed', 'false');
-			$("." + id).css('color', 'gray');
-			$("." + id + "_img_btn").css('background-color', 'white');
-		}*/
-	});
-
-/*	$(document).on('click', ".like_img_btn", function() {
-		if ($(this).attr('aria-pressed') === 'false') {
-			$(this).attr('aria-pressed', 'true');
-			$(this).css('color', 'white');
-			$(this).css('background-color', '#FF4500');
-		} else {
-			$(this).attr('aria-pressed', 'false');
-			$(this).css('color', 'gray');
-			$(this).css('background-color', 'white');
-		}
-	});*/
-	
-	$(".orderbyBtn").on('click', function(){
-		let data = $(this).attr('value'); 
+function like(id, aria) {
+	let data = id.substring(5);
+	if(aria === 'false'){
 		$.ajax({
-			url:'/restProduct/orderby/' + data,
-			type:'GET',
+			url:'/restProduct/setLike/' + data,
+			type: 'POST',
 			contentType:'application/json;charset=utf-8',
-			dataType:'json',
-			success:function(products){
-				makeList(products);
-				$(".orderbyBtn").css('color', 'gray');
-				$(".orderbyBtn").css('font-weight', 'normal');
-				$(".orderbyIcon").css('display', 'none');
-				$("#" + data).css('font-weight', '900')
-				$("#" + data).css('color', 'black')
-				$("#" + data +"_icon").css('display', 'inline');
+			success:function(){
+				$("." + id).attr('aria-pressed', 'true');
+				$("." + id).css('color', '#FF4500');
+				$("." + id + "_img_btn").css('color', 'white');
+				$("." + id + "_img_btn").css('background-color', '#FF4500');
 			},
 			error:function(xhr,status,msg){
 				console.log("상태값 : " + status + " Http에러메시지 : "+msg);
 			}
-		});
-	});
-});
-
+		})
+	}
+	else {
+		$.ajax({
+			url:'/restProduct/deleteLike/' + data,
+			type: 'DELETE',
+			contentType:'application/json;charset=utf-8',
+			success:function(){
+				$("." + id).attr('aria-pressed', 'false');
+				$("." + id).css('color', 'gray');
+				$("." + id + "_img_btn").css('background-color', 'white');
+			},
+			error:function(xhr,status,msg){
+				console.log("상태값 : " + status + " Http에러메시지 : "+msg);
+			}
+		})
+	}
+};
 //function makeList(products){
 //	$('#productlist').empty();
 //	$(products).each(function (index, item){

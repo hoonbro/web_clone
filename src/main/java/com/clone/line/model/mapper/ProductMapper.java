@@ -3,6 +3,7 @@ package com.clone.line.model.mapper;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.clone.line.model.Member;
 import com.clone.line.model.Product;
 import com.clone.line.model.ProductDetail;
 
@@ -14,8 +15,7 @@ public interface ProductMapper {
 
 	public ProductDetail getProductInfo(String pNum) throws SQLException;
 	
-	public void setLike(String data);
+	public void setLike(Member member);
 	
-	public int getLike(String data);
-
+	public void deleteLike(Member member);
 }

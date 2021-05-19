@@ -5,6 +5,14 @@ public class Member {
 	private String userPwd;
 	private String userName;
 	private String userEmail;
+	private String pNum;
+	
+	public String getpNum() {
+		return pNum;
+	}
+	public void setpNum(String pNum) {
+		this.pNum = pNum;
+	}
 	public String getUserId() {
 		return userId;
 	}
