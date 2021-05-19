@@ -17,7 +17,6 @@
 		</trim>
 	</select>
 	
-
 	<select id="getProductInfo" parameterType="String" resultType="ProductDetail">
 		select p1.pModel, p1.pNum, p1.pStatus, p1.pCorp, p1.pBrand, p1.pOrigin, p1.pMdate, p1.thumbnail,p1.detail,p2.pPrice
 		from productmade p1 , product p2
@@ -41,4 +40,14 @@
 			where pName like #{word}
 		</if>
 	</select>
+
+	<insert id="setLike" parameterType="member">
+		insert into interest
+		values(#{pNum}, #{userId})
+	</insert>
+  
+	<delete id="deleteLike" parameterType="member">
+		delete from interest
+		where pNum = #{pNum} and userId = #{userId}
+	</delete>
 </mapper>

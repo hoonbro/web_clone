@@ -63,17 +63,84 @@
 			}
 		});
 		
-		/* 생년월일부터 다시 시작
-		$("#userRePwd").blur(function() {
-			console.log($("#userRePwd").val());
-			console.log($("#userPwd").val());
-			
-			if ($("#userRePwd").val() != $("#userPwd").val()) {
-				$("#repwdCheck").text("비밀번호가 일치하지 않습니다.");
-			} else {
-				$("#repwdCheck").empty();
+		
+		$("#userYear").blur(function() {
+			var userYear = $("#userYear").val();
+			if(userYear == '' || userYear.length !=4) {
+				$("#birthCheck").text("태어난 년도 4자리를 정확하게 입력하세요");
 			}
-		}); */
+			else if(userYear.length ==4) {
+				$("#birthCheck").text("태어난 월을 선택하세요.");				
+			}
+		});
+		
+		$("#userMonth").change(function() {
+			$("#birthCheck").text("태어난 일(날짜) 2자리를 정확하게 입력하세요.");
+		});
+		
+		$("#userDay").blur(function() {
+			let userDay = $("#userDay").val();
+			let userMonth = $("#userMonth").val();
+			const check1 = /[0-9]/;
+			const check2 = /[A-Za-z]/;
+			const check3 = /[!@#$%^&*]/;
+			
+			if(check2.test(userDay) || check3.test(userDay) || userDay.length <2) {
+				$("#birthCheck").text("생년월일을 다시 확인해주세요.");
+			}				
+			else if((userMonth ==1 || userMonth ==3 || userMonth ==5 || userMonth ==7 || userMonth==8 ||
+					userMonth == 10 || userMonth ==12) && userDay >31) {
+				$("#birthCheck").text("생년월일을 다시 확인해주세요.");
+			}
+			else if((userMonth==4 || userMonth==6 || userMonth==9 || userMonth==11) && userDay>30) {
+				$("#birthCheck").text("생년월일을 다시 확인해주세요.");
+			}
+			else if((userMonth==2) && userDay>28) {
+				$("#birthCheck").text("생년월일을 다시 확인해주세요.");
+			}	
+			else {
+				$("#birthCheck").empty();
+			}
+		});
+		
+		
+		$("#userEmail").blur(function() {
+			var email = $("#userEmail").val();
+			
+			
+			if(email !='') {
+				var gol_idx = email.indexOf('@');
+				var jum_idx = email.indexOf('.');
+				console.log(gol_idx+"      "+jum_idx);
+				if(gol_idx <=0 || jum_idx <=0) { //없거나 첫글자로 위치할 떄
+					$("#mailCheck").text("이메일 주소를 다시 확인해주세요.");
+				}
+				else if(gol_idx == email.length-1 || jum_idx == email.length-1) {
+					$("#mailCheck").text("이메일 주소를 다시 확인해주세요.");
+				}
+				else {
+					$("#mailCheck").empty();
+				}	
+			}
+		});
+
+		$("#userPhone").blur(function() {
+			var phoneNumber = $("#userPhone").val();
+			
+			if(phoneNumber =='') {
+				$("#phoneCheck").text("필수 정보입니다.");
+			}
+		});
+		
+		$("#certification").blur(function() {
+			var cert = $("#certification").val();
+			if(cert=='') {
+				$("#phoneCheck").text("인증이 필요합니다.");
+			}
+		});
+		
+		
+	
 	});
 </script>
 </head>
@@ -128,7 +195,7 @@
 				</div>
 				<div id="born">
 					<span id="spanYear"> <input type="text" name="userYear"
-						id="userYear" placeholder="  년(4자리)">
+						id="userYear" placeholder="  년(4자리)" maxlength="4">
 					</span> <span id="spanMonth"> <select name="userMonth"
 						id="userMonth">
 							<option selected="selected">월</option>
@@ -146,9 +213,10 @@
 							<option>12</option>
 					</select>
 					</span> <span id="spanDay"> <input type="text" name="userDay"
-						id="userDay" placeholder="  일">
+						id="userDay" placeholder="  일" maxlength="2">
 					</span>
 				</div>
+				<div id="birthCheck" class="checkItem"></div>
 			</div>
 			<div class="item">
 				<div class="label">
@@ -171,6 +239,7 @@
 					<input type="text" name="userEmail" id="userEmail"
 						placeholder="  선택입력" class="userInfo">
 				</div>
+				<div id="mailCheck" class="checkItem"></div>
 			</div>
 			<div class="item">
 				<div class="label">
@@ -183,7 +252,7 @@
 				</div>
 				<div style="margin: 8px 0;">
 					<span> <input type="text" name="userPhone" id="userPhone"
-						placeholder="  전화번호 입력">
+						placeholder="  전화번호 입력" maxlength="16">
 					</span> <span>
 						<button id="NumBtn">인증번호 받기</button>
 					</span>
@@ -192,6 +261,7 @@
 					<input type="text" name="certification" id="certification"
 						placeholder="  인증번호 입력하세요" readOnly="readonly" class="userInfo">
 				</div>
+				<div id="phoneCheck" class="checkItem"></div>
 			</div>
 			<div class="item">
 				<input type="submit" class="userInfo" id="joinBtn" value="가입하기">
