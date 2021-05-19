@@ -22,6 +22,15 @@
 		from productmade p1 , product p2
 		where p1.pNum = #{pNum} and p2.pNum = #{pNum}
 	</select>
+	
+	<insert id="setLike" parameterType="member">
+		insert into interest
+		values(#{pNum}, #{userId})
+	</insert>
+	<delete id="deleteLike" parameterType="member">
+		delete from interest
+		where pNum = #{pNum} and userId = #{userId}
+	</delete>
 </mapper>
 
 

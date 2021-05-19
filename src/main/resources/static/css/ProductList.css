@@ -90,8 +90,14 @@
 	right: 0;
 }
 
-.like_btn {
+.like_btn[aria-pressed="false"] {
 	color: gray;
+	background-color: white;
+	border-style: none;
+	background-color: white;
+}
+.like_btn[aria-pressed="true"] {
+	color: #FF4500;
 	background-color: white;
 	border-style: none;
 	background-color: white;
@@ -102,8 +108,17 @@
 	outline: none;
 }
 
-.like_img_btn {
-	display: none; color : gray;
+.like_img_btn[aria-pressed="true"] {
+	display: none; 
+	border-style: none;
+	background-color: #FF4500;
+	color : white;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.like_img_btn[aria-pressed="false"] {
+	display: none; 
 	border-style: none;
 	background-color: white;
 	width: 100%;
