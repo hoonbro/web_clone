@@ -30,6 +30,11 @@
 		<if test="word != null and word != ''">
 			where pName like #{word}
 		</if>
+		<trim prefix="ORDER BY">
+			<if test="data == 'pPrice'"> pPrice </if>
+			<if test="data == 'pPrice_desc'"> pPrice desc </if>
+			<if test="data == 'pDate'"> pDate </if>
+		</trim>
 		limit #{start}, #{spp}
 	</select>
 	

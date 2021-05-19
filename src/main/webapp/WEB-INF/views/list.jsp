@@ -20,14 +20,15 @@
 <script>
 $(document).ready(function() {
   	var set = ${likeSet}.map(function(e){return e.toString()});
-
+	var key = "";
 	$(document).on('click', ".page-item", function() {
 		let condition = JSON.stringify({
 			"word" : $("#word").val(), 
 			"pg" : $(this).attr("data-page"), 
 			"spp" : 20,
-			"start" : 1
-		});
+			"start" : 1,
+			"data": key
+ 		});
 		$.ajax({
 			url: '/restProduct/search',
 			type: 'POST',
@@ -89,20 +90,29 @@ $(document).ready(function() {
 	});
 	
 	$(".orderbyBtn").on('click', function(){
-		let data = $(this).attr('value'); 
+		key = $(this).attr('value'); 
+		let condition = JSON.stringify({
+			"word" : $("#word").val(), 
+			"pg" : $(this).attr("data-page"), 
+			"spp" : 20,
+			"start" : 1,
+			"data" : key,
+		});
 		$.ajax({
-			url:'/restProduct/orderby/' + data,
-			type:'GET',
+			url: '/restProduct/search',
+			type: 'POST',
 			contentType:'application/json;charset=utf-8',
+			data: condition,
 			dataType:'json',
-			success:function(products){
-				makeList(products, set);
+			success:function(map){
+				makeList(map['products'], set);
+				makePageNav(map['navigation']);
 				$(".orderbyBtn").css('color', 'gray');
 				$(".orderbyBtn").css('font-weight', 'normal');
 				$(".orderbyIcon").css('display', 'none');
-				$("#" + data).css('font-weight', '900')
-				$("#" + data).css('color', 'black')
-				$("#" + data +"_icon").css('display', 'inline');
+				$("#" + key).css('font-weight', '900')
+				$("#" + key).css('color', 'black')
+				$("#" + key +"_icon").css('display', 'inline');
 			},
 			error:function(xhr,status,msg){
 				console.log("상태값 : " + status + " Http에러메시지 : "+msg);
@@ -249,7 +259,7 @@ function makePageNav(nav) {
 					<li><a class="small_li" href="#"> > 캐릭터</a></li>
 					<li class="dropdown " id="small_ul"><a
 						class="dropdown-toggle small_li" data-toggle="dropdown"
-						style="color: black;"> > <b>브라운앤프렌즈(총 ${list.size()}개)</b></a>
+						style="color: black;"> > <b>브라운앤프렌즈(총 ${productList.size()}개)</b></a>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="${root}/product/list">브라운앤프렌즈</a> <a
 								class="dropdown-item" href="#">BT21</a> <a class="dropdown-item"

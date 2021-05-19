@@ -38,7 +38,6 @@ public class Restful_ProductController {
 		List<Product> plist = productService.orderby(data);
 		Set<String> set = (Set<String>) session.getAttribute("likeSet");
 		session.setAttribute("order", set);
-		System.out.println("orderby " + set.size());
 		if(plist != null) {
 			return new ResponseEntity<List<Product>>(plist, HttpStatus.OK);
 		}
@@ -66,7 +65,6 @@ public class Restful_ProductController {
 			productService.setLike(member);
 			Set<String> set = (Set<String>) session.getAttribute("likeSet");
 			set.add(data);
-			System.out.println("in " + set.size());
 			session.setAttribute("likeSet", set);
 			return new ResponseEntity<Void>(HttpStatus.OK);
 		}catch (Exception e) {
