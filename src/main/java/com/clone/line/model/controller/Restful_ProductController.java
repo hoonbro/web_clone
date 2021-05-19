@@ -80,7 +80,6 @@ public class Restful_ProductController {
 			productService.deleteLike(member);
 			Set<String> set = (Set<String>) session.getAttribute("likeSet");
 			set.remove(data);
-			System.out.println("out " + set.size());
 			session.setAttribute("likeSet", set);
 			return new ResponseEntity<Void>(HttpStatus.OK);
 		}catch (Exception e) {

@@ -19,7 +19,10 @@
 <script src = "/js/ProductList.js"></script>
 <script>
 $(document).ready(function() {
-  	var set = ${likeSet}.map(function(e){return e.toString()});
+	var set = [${likeSet}];
+	if(set.length != 0)
+		set = set[0].map(function(e){return e.toString()});
+  		
 	var key = "";
 	$(document).on('click', ".page-item", function() {
 		let condition = JSON.stringify({
