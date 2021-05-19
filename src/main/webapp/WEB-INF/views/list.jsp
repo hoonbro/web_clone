@@ -19,7 +19,28 @@
 <script src = "/js/ProductList.js"></script>
 <script>
 $(document).ready(function() {
-	var set = ${likeSet}.map(function(e){return e.toString()});
+  	var set = ${likeSet}.map(function(e){return e.toString()});
+
+	$(document).on('click', ".page-item", function() {
+		let condition = JSON.stringify({
+			"word" : $("#word").val(), 
+			"pg" : $(this).attr("data-page"), 
+			"spp" : 20,
+			"start" : 1
+		});
+		$.ajax({
+			url: '/restProduct/search',
+			type: 'POST',
+			contentType: 'application/json;charset=utf-8',
+			dataType:'json',
+			data: condition,
+			success:function(map) {
+				makeList(map['products'], set);
+				makePageNav(map['navigation']);
+      }
+    });
+   });
+
 	$(document).on('click', ".like_btns", function() {
 		if("${userInfo.userId}" == "")
 			if(confirm("로그인이 필요한 서비스입니다. 로그인 하시겠습니까?") == true)
@@ -89,6 +110,7 @@ $(document).ready(function() {
 		});
 	});
 });
+
 function makeList(products, set){
 	$('#productlist').empty();
 	
@@ -147,8 +169,72 @@ function makeList(products, set){
 		}
 	});
 }
+
+function makePageNav(nav) {
+	console.log(nav);
+	$('#PageNav').empty();
+	
+	let str = "";
+	str += `
+		<li class="page-item" data-page="1">
+     		<a class="page-link" href="#">처음</a>
+   		</li>
+	`;
+	
+	if (nav.startRange) {
+		str += `
+			<li class="page-item" data-page="1">
+     			<a class="page-link" href="#">Previous</a>
+    		</li>
+    	`;
+	} else {
+		str += `
+			<li class="page-item" data-page="${nav.startPage-1}">
+     			<a class="page-link" href="#">Previous</a>
+    		</li>
+		`;
+	}
+	
+	for (let i=nav.startPage; i<nav.endPage; i++) {
+		if (nav.currentPage == i) {
+			str += `
+				<li class="page-item active" data-page=`+i+`>
+					<a class="page-link" href="#">`+i+`</a>
+				</li>
+			`;
+		} else {
+			str += `
+				<li class="page-item" data-page=`+i+`>
+					<a class="page-link" href="#">`+i+`</a>
+				</li>
+			`;
+		}
+	}
+	
+	if (nav.endRange) {
+		str += `
+			<li class="page-item" data-page="${nav.endPage}">
+     			<a class="page-link" href="#">Next</a>
+    		</li>
+		`;
+	} else {
+		str += `
+			<li class="page-item" data-page="${nav.endPage+1}">
+     			<a class="page-link" href="#">Next</a>
+    		</li>
+		`;
+	}
+	
+	str += `
+		<li class="page-item" data-page="${nav.totalPageCount}">
+     		<a class="page-link" href="#">마지막</a>
+   		</li>
+	`;
+	
+	$('#PageNav').append(str);
+}
 </script>
-<title>Insert title here</title>
+<title>라인 프렌즈</title>
 </head>
 <body style="width: 1400px; margin: 0 auto">
 	<%@ include file="./include/header.jsp"%>
@@ -191,7 +277,7 @@ function makeList(products, set){
 		</div>
 		<!-- 상품 리스트 -->
 		<ul id="productlist">
-			<c:forEach var = "item" items = "${list }">
+			<c:forEach var = "item" items = "${productList}">
 				<li>
 				<div class=product>
 
@@ -230,6 +316,7 @@ function makeList(products, set){
 			</c:forEach>
 		</ul>
 	</div>
+	<%@ include file="./include/paging.jsp"%>
 	<%@ include file="./include/footer.jsp"%>
 </body>
 </html>

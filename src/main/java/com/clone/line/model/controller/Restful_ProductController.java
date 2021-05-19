@@ -1,6 +1,7 @@
 package com.clone.line.model.controller;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import javax.servlet.http.HttpSession;
@@ -13,13 +14,16 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.clone.line.model.Member;
 import com.clone.line.model.Product;
+import com.clone.line.model.SearchCondition;
 import com.clone.line.model.service.ProductService;
+import com.clone.util.PageNavigation;
 
 
 @RestController
@@ -42,6 +46,18 @@ public class Restful_ProductController {
 			return new ResponseEntity(HttpStatus.NO_CONTENT);
 	}
 	
+
+	@PostMapping(value = "/search")
+	public ResponseEntity<Map<String, Object>> search(@RequestBody SearchCondition condition) {
+		try {
+			Map<String, Object> map = productService.pagingSearch(condition);
+			return new ResponseEntity<Map<String, Object>>(map, HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new ResponseEntity<Map<String, Object>>(HttpStatus.NO_CONTENT);
+    }
+  }
+  
 	@PostMapping("/setLike/{data}")
 	public ResponseEntity<Void> setLike(@PathVariable String data, HttpSession session){
 		try {
